@@ -1,5 +1,5 @@
 # Make the Robomaster drive non-stop while making all the LEDS flash-rotate two, different colours.
-# Type and execute/run this program below and see what happens.
+# Type and execute/run this program example below and see what happens.
 
 while True:
     chassis_ctrl.set_wheel_speed(50,50,50,50)
@@ -53,6 +53,23 @@ for i in range(2):
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,255,rm_define.effect_breath)
     chassis_ctrl.rotate_with_degree(rm_define.clockwise,90)
     chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,90)
+    
+# Make the Robomaster recognize the red heart and make him wait for it to be recognized
+# before he works his bright cyan lights and starts to move his chassis forward for one
+# second each time the red heart is shown to him. Type and execute/run the program example
+# below and see what happens.
+    
+def start():
+    while True:
+        media_ctrl.zoom_value_update(1)
+        vision_ctrl.enable_detection(rm_define.vision_detection_marker)
+        vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)        
+def vision_recognized_marker_trans_red_heart(msg):
+    led_ctrl.set_top_led(rm_define.armor_top_all, 0, 255, 255, rm_define.effect_always_on)
+    chassis_ctrl.set_wheel_speed(50,50,50,50)
+    time.sleep(1)
+    led_ctrl.set_top_led(rm_define.armor_top_all, 0, 255, 255, rm_define.effect_always_off)
+    chassis_ctrl.stop()   
 
 # More future Robomaster s1 Python examples still to come.
  
