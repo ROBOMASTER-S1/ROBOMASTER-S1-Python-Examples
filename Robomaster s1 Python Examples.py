@@ -27,6 +27,14 @@ while True:
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     time.sleep(.095)
     
+# Make the blaster fire four times. Type and execute/run the program example below and see
+# what happens
+    
+for count in range(4):
+    led_ctrl.gun_led_on()
+    gun_ctrl.fire_once()
+    led_ctrl.gun_led_off()    
+    
 # Make all the LEDs flash ten times a second, while making the chassis rocks back and forth.
 # Type and execute/run the program example below and see what happens.
 
