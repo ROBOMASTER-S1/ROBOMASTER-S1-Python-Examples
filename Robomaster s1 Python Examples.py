@@ -10,7 +10,7 @@
 # the Robomaster S1 to it, via wireless mobile device or on your computer, via Wi-Fi.
 '''----------------------------------------------------------------------------------------------------------------'''
 # Make the Robomaster drive non-stop while making all the LEDS flash-rotate two, different colours.
-# Type and execute/run this program example below and see what happens.
+# Type and execute/run the program example below and see what happens.
 
 while True:
     chassis_ctrl.set_wheel_speed(50,50,50,50)
