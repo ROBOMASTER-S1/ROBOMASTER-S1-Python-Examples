@@ -28,7 +28,7 @@ while True:
     time.sleep(.095)
     
 # Make the blaster fire four times. Type and execute/run the program example below and see
-# what happens
+# what happens.
     
 for count in range(4):
     led_ctrl.gun_led_on()
