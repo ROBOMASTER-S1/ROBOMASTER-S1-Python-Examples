@@ -1,4 +1,5 @@
-# More future Robomaster s1 Python examples still to come.
+# Make the Robomaster drive non-stop while making all the LEDS flash-rotate two, different colours.
+# Type and execute/run this program below and see what happens.
 
 while True:
     chassis_ctrl.set_wheel_speed(50,50,50,50)
@@ -15,3 +16,43 @@ while True:
     led_ctrl.set_single_led(rm_define.armor_top_left,[2,4,6,8],rm_define.effect_always_on)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     time.sleep(.095)
+    
+# Make all the LEDs flash ten times a second, while making the chassis rocks back and forth.
+# Type and execute/run the program example below and see what happens.
+
+for i in range(2):
+    robot_ctrl.set_mode(rm_define.robot_mode_free)
+    led_ctrl.set_flash(rm_define.armor_all,10)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0, rm_define.effect_flash)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,0,rm_define.effect_flash)
+    chassis_ctrl.set_wheel_speed(50,-50,50,-50)
+    time.sleep(1)
+    chassis_ctrl.set_wheel_speed(-50,50,-50,50)
+    time.sleep(1)
+    
+# Turn on the Robomaster's gun light and make the LEDs pulsate, while the chassis rocks back and forth.
+# Type and execute/run this program example below and see what happens.
+    
+for i in range(2):
+    robot_ctrl.set_mode(rm_define.robot_mode_free)
+    led_ctrl.gun_led_on()
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,0,255, rm_define.effect_breath)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,255,rm_define.effect_breath)
+    chassis_ctrl.set_wheel_speed(50,-50,50,-50)
+    time.sleep(1)
+    chassis_ctrl.set_wheel_speed(-50,50,-50,50)
+    time.sleep(1)    
+
+# Turn on the Robomaster's gun light and make the LEDS pulsate, while rotating clockwise and anti
+# clockwise. Type and execute/run the program example below and see what happens.
+
+for i in range(2):
+    robot_ctrl.set_mode(rm_define.robot_mode_free)
+    led_ctrl.gun_led_on()
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,0,255,rm_define.effect_breath)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,255,rm_define.effect_breath)
+    chassis_ctrl.rotate_with_degree(rm_define.clockwise,90)
+    chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,90)
+
+# More future Robomaster s1 Python examples still to come.
+ 
