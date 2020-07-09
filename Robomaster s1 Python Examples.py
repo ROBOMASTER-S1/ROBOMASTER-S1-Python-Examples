@@ -16,7 +16,7 @@ while True:
     chassis_ctrl.set_wheel_speed(50,50,50,50)
     led_ctrl.set_top_led(rm_define.armor_top_right,255,0,255,rm_define.effect_always_off)
     led_ctrl.set_single_led(rm_define.armor_top_right,[1,3,5,7],rm_define.effect_always_on)
-    led_ctrl.set_top_led(rm_define.armor_top_left,0,255,255, rm_define.effect_always_off)
+    led_ctrl.set_top_led(rm_define.armor_top_left,0,255,255,rm_define.effect_always_off)
     led_ctrl.set_single_led(rm_define.armor_top_left,[1,3,5,7],rm_define.effect_always_on)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,255,rm_define.effect_always_on)
     time.sleep(.095)
@@ -41,7 +41,7 @@ for count in range(4):
 for i in range(2):
     robot_ctrl.set_mode(rm_define.robot_mode_free)
     led_ctrl.set_flash(rm_define.armor_all,10)
-    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0, rm_define.effect_flash)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,0,rm_define.effect_flash)
     chassis_ctrl.set_wheel_speed(50,-50,50,-50)
     time.sleep(1)
@@ -54,7 +54,7 @@ for i in range(2):
 for i in range(2):
     robot_ctrl.set_mode(rm_define.robot_mode_free)
     led_ctrl.gun_led_on()
-    led_ctrl.set_top_led(rm_define.armor_top_all,0,0,255, rm_define.effect_breath)
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,0,255,rm_define.effect_breath)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,255,rm_define.effect_breath)
     chassis_ctrl.set_wheel_speed(50,-50,50,-50)
     time.sleep(1)
@@ -83,12 +83,12 @@ def start():
         vision_ctrl.enable_detection(rm_define.vision_detection_marker)
         vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)        
 def vision_recognized_marker_trans_red_heart(msg):
-    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255, rm_define.effect_always_on)
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     chassis_ctrl.set_wheel_speed(50,50,50,50)
     time.sleep(1)
     led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255, rm_define.effect_always_off)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
     chassis_ctrl.stop()   
 
 # More future Robomaster s1 Python examples still to come.
