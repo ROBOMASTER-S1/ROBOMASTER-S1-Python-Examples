@@ -28,7 +28,7 @@ media_ctrl.zoom_value_update(4)
 
 '''-----------------------------------------------------------------------------'''
 
-# LED Effects Python Commands:
+# LED EFFECTS Python Commands:
 
 led_ctrl.set_flash(rm_define.armor_all, 2)
 
