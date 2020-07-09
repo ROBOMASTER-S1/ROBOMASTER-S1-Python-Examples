@@ -1,6 +1,6 @@
 # Robomaster S1 Python commands
 
-# Robomaster S1 System Python Commands:
+# SYSTEM Python Commands:
 
 robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
@@ -94,7 +94,7 @@ led_ctrl.gun_led_off()
 
 '''-----------------------------------------------------------------------------'''
 
-# Chassis Python Commands:
+# CHASSIS Python Commands:
 
 chassis_ctrl.set_pwm_value(rm_define.pwm_all, 7.5)
 
@@ -188,7 +188,7 @@ chassis_ctrl.stop()
 
 '''-----------------------------------------------------------------------------'''
 
-# Gimbal Python Commands:
+# GIMBAL Python Commands:
 
 gimbal_ctrl.enable_stick_overlay()
 
@@ -282,7 +282,7 @@ ir_blaster_ctrl.stop()
 
 '''-----------------------------------------------------------------------------'''
 
-# SMART Robot Python Commands:
+# SMART Python Commands:
 
 vision_ctrl.enable_detection(rm_define.vision_detection_marker)
 
@@ -702,6 +702,8 @@ vision_ctrl.cond_wait(rm_define.cond_recognized_marker_letter_Z)
 
 '''-----------------------------------------------------------------------------'''
 
+# ARMOR Python Commands:
+
 armor_ctrl.set_hit_sensitivity(5)
 
 '''-----------------------------------------------------------------------------'''
@@ -756,6 +758,8 @@ armor_ctrl.cond_wait(rm_define.cond_ir_hit_detection)
 
 '''-----------------------------------------------------------------------------'''
 
+# SENSOR Python Commands:
+
 ir_distance_sensor_ctrl.enable_measure(1)
 
 ir_distance_sensor_ctrl.disable_measure(1)
@@ -775,6 +779,22 @@ ir_distance_sensor_ctrl.cond_wait("ir_distance_1_ge_10")
 ir_distance_sensor_ctrl.cond_wait("ir_distance_1_le_10")
 
 '''-----------------------------------------------------------------------------'''
+
+# SENSOR ADAPTER Python Commands:
+
+sensor_adapter_ctrl.cond_wait(rm_define.cond_sensor_adapter1_port1_low_event)
+
+sensor_adapter_ctrl.cond_wait(rm_define.cond_sensor_adapter1_port1_high_event)
+
+def sensor_adapter1_port1_high_event(msg):
+    pass
+
+def sensor_adapter1_port1_low_event(msg):
+    pass
+
+'''-----------------------------------------------------------------------------'''
+
+# MEDIA Python Commands:
 
 media_ctrl.play_sound(rm_define.media_sound_solmization_1C)
 
