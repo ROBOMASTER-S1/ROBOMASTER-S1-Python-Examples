@@ -30,55 +30,55 @@ media_ctrl.zoom_value_update(4)
 
 # LED EFFECTS Python Commands:
 
-led_ctrl.set_flash(rm_define.armor_all, 2)
+led_ctrl.set_flash(rm_define.armor_all,2)
 
-led_ctrl.set_flash(rm_define.armor_bottom_front, 2)
+led_ctrl.set_flash(rm_define.armor_bottom_front,2)
 
-led_ctrl.set_flash(rm_define.armor_bottom_back, 2)
+led_ctrl.set_flash(rm_define.armor_bottom_back,2)
 
-led_ctrl.set_flash(rm_define.armor_bottom_left, 2)
+led_ctrl.set_flash(rm_define.armor_bottom_left,2)
 
-led_ctrl.set_flash(rm_define.armor_bottom_right, 2)
+led_ctrl.set_flash(rm_define.armor_bottom_right,2)
 
-led_ctrl.set_flash(rm_define.armor_top_left, 2)
+led_ctrl.set_flash(rm_define.armor_top_left,2)
 
-led_ctrl.set_flash(rm_define.armor_top_right, 2)
-
-'''-----------------------------------------------------------------------------'''
-
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 69, 215, 255, rm_define.effect_always_on)
-
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 69, 215, 255, rm_define.effect_always_off)
-
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 69, 215, 255, rm_define.effect_breath)
-
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 69, 215, 255, rm_define.effect_flash)
+led_ctrl.set_flash(rm_define.armor_top_right,2)
 
 '''-----------------------------------------------------------------------------'''
 
-led_ctrl.set_top_led(rm_define.armor_top_all, 69, 215, 255, rm_define.effect_always_on)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_always_on)
 
-led_ctrl.set_top_led(rm_define.armor_top_all, 69, 215, 255, rm_define.effect_always_off)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_always_off)
 
-led_ctrl.set_top_led(rm_define.armor_top_all, 69, 215, 255, rm_define.effect_breath)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_breath)
 
-led_ctrl.set_top_led(rm_define.armor_top_all, 69, 215, 255, rm_define.effect_flash)
-
-led_ctrl.set_top_led(rm_define.armor_top_all, 69, 215, 255, rm_define.effect_marquee)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_flash)
 
 '''-----------------------------------------------------------------------------'''
 
-led_ctrl.set_single_led(rm_define.armor_top_all, 1, rm_define.effect_always_on)
+led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_always_on)
 
-led_ctrl.set_single_led(rm_define.armor_top_all, 1, rm_define.effect_always_off)
+led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_always_off)
 
-led_ctrl.set_single_led(rm_define.armor_top_all, [1,3,5,7], rm_define.effect_always_on)
+led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_breath)
 
-led_ctrl.set_single_led(rm_define.armor_top_all, [1,3,5,7], rm_define.effect_always_off)
+led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_flash)
 
-led_ctrl.set_single_led(rm_define.armor_top_left, [2,4,6,8], rm_define.effect_always_on)
+led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_marquee)
 
-led_ctrl.set_single_led(rm_define.armor_top_left, [2,4,6,8], rm_define.effect_always_off)
+'''-----------------------------------------------------------------------------'''
+
+led_ctrl.set_single_led(rm_define.armor_top_all,1,rm_define.effect_always_on)
+
+led_ctrl.set_single_led(rm_define.armor_top_all,1,rm_define.effect_always_off)
+
+led_ctrl.set_single_led(rm_define.armor_top_all,[1,3,5,7],rm_define.effect_always_on)
+
+led_ctrl.set_single_led(rm_define.armor_top_all,[1,3,5,7],rm_define.effect_always_off)
+
+led_ctrl.set_single_led(rm_define.armor_top_left,[2,4,6,8],rm_define.effect_always_on)
+
+led_ctrl.set_single_led(rm_define.armor_top_left,[2,4,6,8],rm_define.effect_always_off)
 
 '''-----------------------------------------------------------------------------'''
 
@@ -96,19 +96,19 @@ led_ctrl.gun_led_off()
 
 # CHASSIS Python Commands:
 
-chassis_ctrl.set_pwm_value(rm_define.pwm_all, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm_all,7.5)
 
-chassis_ctrl.set_pwm_value(rm_define.pwm1, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm1,7.5)
 
-chassis_ctrl.set_pwm_value(rm_define.pwm2, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm2,7.5)
 
-chassis_ctrl.set_pwm_value(rm_define.pwm3, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm3,7.5)
 
-chassis_ctrl.set_pwm_value(rm_define.pwm4, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm4,7.5)
 
-chassis_ctrl.set_pwm_value(rm_define.pwm5, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm5,7.5)
 
-chassis_ctrl.set_pwm_value(rm_define.pwm6, 7.5)
+chassis_ctrl.set_pwm_value(rm_define.pwm6,7.5)
 
 '''-----------------------------------------------------------------------------'''
 
@@ -156,9 +156,9 @@ chassis_ctrl.rotate(rm_define.anticlockwise)
 
 '''-----------------------------------------------------------------------------'''
 
-chassis_ctrl.rotate_with_time(rm_define.clockwise, 1)
+chassis_ctrl.rotate_with_time(rm_define.clockwise,1)
 
-chassis_ctrl.rotate_with_time(rm_define.anticlockwise, 1)
+chassis_ctrl.rotate_with_time(rm_define.anticlockwise,1)
 
 '''-----------------------------------------------------------------------------'''
 
@@ -240,7 +240,7 @@ gimbal_ctrl.pitch_ctrl(0)
 
 '''-----------------------------------------------------------------------------'''
 
-gimbal_ctrl.angle_ctrl(0, 0)
+gimbal_ctrl.angle_ctrl(0,0)
 
 '''-----------------------------------------------------------------------------'''
 
@@ -884,24 +884,42 @@ media_ctrl.record(0)
 
 '''-----------------------------------------------------------------------------'''
 
+# Basic time.sleep() function
+
 time.sleep(1)
 
 '''-----------------------------------------------------------------------------'''
+
+# Basic for-loop function
 
 for count in range(10):
     pass
 
 '''-----------------------------------------------------------------------------'''
 
+# Basic while-loop
+
 while True:
     pass
 
 '''-----------------------------------------------------------------------------'''
 
+# Basic if True/False statements:
+
+if True:
+    pass
+
 if False:
     pass
 
 '''-----------------------------------------------------------------------------'''
+
+# Basic if else True/False statements:
+
+if True:
+    pass
+else:
+    pass
 
 if False:
     pass
@@ -910,14 +928,20 @@ else:
 
 '''-----------------------------------------------------------------------------'''
 
+# Basic while not False statement:
+
 while not False:
     pass
 
 '''-----------------------------------------------------------------------------'''
 
+# Robomaster S1 exit() function:
+
 rmexit()
 
 '''-----------------------------------------------------------------------------'''
+
+# Basic user defined function():
 
 def user_defined_new_func1():
     pass
