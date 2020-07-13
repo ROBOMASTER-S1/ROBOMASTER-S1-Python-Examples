@@ -89,6 +89,23 @@ def vision_recognized_marker_trans_red_heart(msg):
     time.sleep(1)
     led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
-    chassis_ctrl.stop()   
-
-# More future Robomaster s1 Python examples still to come.
+    chassis_ctrl.stop()
+    
+# Make the Robomaster recognize the red heart and make him wait for it to be recognized
+# before he works his bright red lights and starts blinking them twice. Type and execute/run
+# the program example below and see what happens.    
+    
+def start():
+    while True:
+        media_ctrl.zoom_value_update(1)
+        led_ctrl.set_top_led(rm_define.armor_top_all,0,0,0,rm_define.effect_always_off)
+        led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,0,rm_define.effect_always_off)
+        vision_ctrl.enable_detection(rm_define.vision_detection_marker)
+        vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
+def vision_recognized_marker_trans_red_heart(msg):
+    led_ctrl.set_flash(rm_define.armor_all,2)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_flash)
+    time.sleep(1)
+    
+# More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
