@@ -112,11 +112,11 @@ def vision_recognized_marker_trans_red_heart(msg):
     
 while True:
     vision_ctrl.enable_detection(rm_define.vision_detection_marker)
-    led_ctrl.set_top_led(rm_define.armor_top_all, 255, 255, 255, rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 255, 255, 255, rm_define.effect_always_on)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,255,255,rm_define.effect_always_on)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,255,rm_define.effect_always_on)
     vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
-    led_ctrl.set_top_led(rm_define.armor_top_all, 255, 0, 0, rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 255, 0, 0, rm_define.effect_always_on)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_always_on)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_always_on)
     vision_ctrl.detect_marker_and_aim(rm_define.marker_trans_red_heart)    
     
 # Rapid-fire blaster gun 8 times Example:
