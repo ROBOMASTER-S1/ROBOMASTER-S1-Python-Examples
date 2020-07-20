@@ -211,4 +211,77 @@ led_ctrl.set_top_led(rm_define.armor_top_all,255,255,0,rm_define.effect_flash)
 led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,0,rm_define.effect_flash)
 gimbal_ctrl.rotate_with_degree(rm_define.gimbal_down,35)
 
+# Rotate gimbal and pitch example:
+
+robot_ctrl.set_mode(rm_define.robot_mode_free)
+gimbal_ctrl.recenter()
+time.sleep(0.5)
+led_ctrl.set_flash(rm_define.armor_all,2)
+gimbal_ctrl.set_rotate_speed(30)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,193,0, rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,193,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_right,90)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0, rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_left,180)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,193,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,193,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_right,90)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_up,55)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,193,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,193,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_down,55)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_flash)
+gimbal_ctrl.pitch_ctrl(0)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,193,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,193,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_left,180)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_right,360)
+led_ctrl.set_top_led(rm_define.armor_top_all,255,193,0,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,193,0,rm_define.effect_flash)
+gimbal_ctrl.rotate_with_degree(rm_define.gimbal_left,180)
+
+# Drive sideways side to side example 1:
+
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(-30,30,30,-30)
+    time.sleep(3)
+    chassis_ctrl.set_wheel_speed(30,-30,-30,30)
+    time.sleep(3)    
+
+# Drive sideways side to side example 2:
+
+while True:
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+    chassis_ctrl.set_trans_speed(0.2)
+    chassis_ctrl.move_with_time(90,3)
+    chassis_ctrl.move_with_time(-90,3)
+
+# Drive and turn around example 1:
+
+while True:
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+    chassis_ctrl.set_wheel_speed(-30,30,-30,30)
+    time.sleep(4)
+    chassis_ctrl.set_wheel_speed(30,30,30,30)
+    time.sleep(3)
+    chassis_ctrl.set_wheel_speed(30,-30,30,-30)
+    time.sleep(4)
+    chassis_ctrl.set_wheel_speed(30,30,30,30)
+    time.sleep(3)
+    
+# For-loop blinking LED's rate example:
+
+for i in range(10):
+    led_ctrl.set_flash(rm_define.armor_all,i+1)
+    led_ctrl.set_top_led(rm_define.armor_top_all, 255, 0, 0, rm_define.effect_flash)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 255, 255, 0, rm_define.effect_flash)
+    time.sleep(1)    
+
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
