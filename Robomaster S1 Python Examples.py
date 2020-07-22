@@ -280,8 +280,8 @@ while True:
 
 for i in range(10):
     led_ctrl.set_flash(rm_define.armor_all,i+1)
-    led_ctrl.set_top_led(rm_define.armor_top_all, 255, 0, 0, rm_define.effect_flash)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 255, 255, 0, rm_define.effect_flash)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,0,rm_define.effect_flash)
     time.sleep(1)    
 
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
