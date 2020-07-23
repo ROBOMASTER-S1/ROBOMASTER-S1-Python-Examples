@@ -276,6 +276,17 @@ while True:
     chassis_ctrl.set_wheel_speed(30,30,30,30)
     time.sleep(3)
     
+# Drive and turn around example 2:
+
+while True:
+    chassis_ctrl.set_rotate_speed(30)
+    chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
+    chassis_ctrl.set_wheel_speed(30,30,30,30)
+    time.sleep(4)
+    chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
+    chassis_ctrl.set_wheel_speed(30,30,30,30)
+    time.sleep(4)
+    
 # For-loop blinking LED's rate example:
 
 for i in range(10):
