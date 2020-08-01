@@ -262,7 +262,57 @@ while True:
     chassis_ctrl.set_trans_speed(0.2)
     chassis_ctrl.move_with_time(90,3)
     chassis_ctrl.move_with_time(-90,3)
+    
+# Drive front sideways circle right example:
 
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(80,-80,-20,20)    
+
+# Drive front sideways circle left example:
+
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(-80,80,20,-20)    
+
+# Drive rear sideways circle right example:
+
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(20,-20,-80,80)
+
+# Drive rear sideways circle left example:
+
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(-20,20,80,-80)
+
+# Drive front sideways circle right and left example:
+
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(-80,80,20,-20)
+    time.sleep(10)
+    chassis_ctrl.set_wheel_speed(80,-80,-20,20)
+    time.sleep(10)
+
+# Drive rear sideways circle right and left example:
+
+robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+while True:
+    chassis_ctrl.set_wheel_speed(20,-20,-80,80)
+    time.sleep(10)
+    chassis_ctrl.set_wheel_speed(-20,20,80,-80)
+    time.sleep(10)    
+
+# For-loop blinking LED's rate example:
+
+for i in range(10):
+    led_ctrl.set_flash(rm_define.armor_all,i+1)
+    led_ctrl.set_top_led(rm_define.armor_top_all, 255, 0, 0, rm_define.effect_flash)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 255, 255, 0, rm_define.effect_flash)
+    time.sleep(1)
+    
 # Drive and turn around example 1:
 
 while True:
