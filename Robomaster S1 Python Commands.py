@@ -221,7 +221,7 @@ gimbal_ctrl.rotate(rm_define.gimbal_down)
 gimbal_ctrl.rotate(rm_define.gimbal_left)
 
 gimbal_ctrl.rotate(rm_define.gimbal_right)
-    
+
 '''-----------------------------------------------------------------------------'''
 
 gimbal_ctrl.rotate_with_degree(rm_define.gimbal_up,0)
@@ -599,7 +599,7 @@ def sound_recognized_applause_thrice(msg):
  vision_ctrl.cond_wait(rm_define.cond_recognized_people)
 
  vision_ctrl.cond_wait(rm_define.cond_recognized_car)
- 
+
  '''-----------------------------------------------------------------------------'''
 
 vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_all)
@@ -851,7 +851,7 @@ media_ctrl.play_sound(rm_define.media_sound_recognize_success)
 media_ctrl.play_sound(rm_define.media_sound_gimbal_rotate)
 
 media_ctrl.play_sound(rm_define.media_sound_count_down)
-    
+
 '''-----------------------------------------------------------------------------'''
 
 media_ctrl.play_sound(rm_define.media_sound_attacked,wait_for_complete_flag=True)
