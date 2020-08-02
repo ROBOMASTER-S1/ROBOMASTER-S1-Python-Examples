@@ -46,25 +46,25 @@ led_ctrl.set_flash(rm_define.armor_top_right,2)
 
 '''-----------------------------------------------------------------------------'''
 
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_always_on)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
 
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_always_off)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
 
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_breath)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_breath)
 
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all,69,215,255,rm_define.effect_flash)
+led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_flash)
 
 '''-----------------------------------------------------------------------------'''
 
-led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_always_on)
+led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
 
-led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_always_off)
+led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
 
-led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_breath)
+led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_breath)
 
-led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_flash)
+led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_flash)
 
-led_ctrl.set_top_led(rm_define.armor_top_all,69,215,255,rm_define.effect_marquee)
+led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_marquee)
 
 '''-----------------------------------------------------------------------------'''
 
