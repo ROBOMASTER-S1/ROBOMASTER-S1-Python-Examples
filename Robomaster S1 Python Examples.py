@@ -8,7 +8,9 @@
 
 # Note: to be able to program the Robomaster S1 in Scratch or Python, you must run the Robomaster S1 app, then connect
 # the Robomaster S1 to it, via wireless mobile device or on your computer, via Wi-Fi.
+
 '''----------------------------------------------------------------------------------------------------------------'''
+
 # Make the Robomaster drive non-stop while making all the LEDS flash-rotate two, different colours.
 # Type and execute/run the program example below and see what happens.
 
@@ -27,13 +29,17 @@ while True:
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     time.sleep(.095)
     
+'''----------------------------------------------------------------------------------------------------------------'''
+    
 # Make the blaster fire four times. Type and execute/run the program example below and see
 # what happens.
     
 for count in range(4):
     led_ctrl.gun_led_on()
     gun_ctrl.fire_once()
-    led_ctrl.gun_led_off()    
+    led_ctrl.gun_led_off()
+    
+'''----------------------------------------------------------------------------------------------------------------'''
     
 # Make all the LEDs flash ten times a second, while making the chassis rocks back and forth.
 # Type and execute/run the program example below and see what happens.
@@ -48,6 +54,8 @@ for i in range(2):
     chassis_ctrl.set_wheel_speed(-50,50,-50,50)
     time.sleep(1)
     
+'''----------------------------------------------------------------------------------------------------------------'''
+    
 # Turn on the Robomaster's gun light and make the LEDs pulsate, while the chassis rocks back and forth.
 # Type and execute/run this program example below and see what happens.
     
@@ -59,7 +67,9 @@ for i in range(2):
     chassis_ctrl.set_wheel_speed(50,-50,50,-50)
     time.sleep(1)
     chassis_ctrl.set_wheel_speed(-50,50,-50,50)
-    time.sleep(1)    
+    time.sleep(1)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Turn on the Robomaster's gun light and make the LEDS pulsate, while rotating clockwise and anti
 # clockwise. Type and execute/run the program example below and see what happens.
@@ -71,6 +81,8 @@ for i in range(2):
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,255,rm_define.effect_breath)
     chassis_ctrl.rotate_with_degree(rm_define.clockwise,90)
     chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,90)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
     
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized
 # before he works his bright cyan lights and starts to move his chassis forward for one
@@ -91,6 +103,8 @@ def vision_recognized_marker_trans_red_heart(msg):
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
     chassis_ctrl.stop()
     
+'''----------------------------------------------------------------------------------------------------------------'''
+    
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized
 # before he works his bright red lights and starts blinking them twice. Type and execute/run
 # the program example below and see what happens.    
@@ -107,6 +121,8 @@ def vision_recognized_marker_trans_red_heart(msg):
     led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_flash)
     time.sleep(1)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Red Heart Aim Example:    
     
@@ -117,12 +133,16 @@ while True:
     vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
     led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_always_on)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_always_on)
-    vision_ctrl.detect_marker_and_aim(rm_define.marker_trans_red_heart)    
+    vision_ctrl.detect_marker_and_aim(rm_define.marker_trans_red_heart)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
     
 # Rapid-fire blaster gun 8 times Example:
 
 gun_ctrl.set_fire_count(8)
 gun_ctrl.fire_once()
+
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Turret fire and rotate 180 degrees Example:
 
@@ -152,6 +172,8 @@ gimbal_ctrl.rotate_with_degree(rm_define.gimbal_right,180)
 gun_ctrl.fire_once()
 gun_ctrl.stop()
 time.sleep(0.5)
+
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Rotate the turret and set the speed to 20, while making the lights
 # change from yellow to red, and back to yellow.
@@ -189,6 +211,8 @@ gimbal_ctrl.rotate_with_degree(rm_define.gimbal_down,35)
 gun_ctrl.set_fire_count(8)
 gun_ctrl.fire_once()
 
+'''----------------------------------------------------------------------------------------------------------------'''
+
 # Rotate the turret and set the speed to 20, while changing all the lights from
 # red to yellow.
 
@@ -210,6 +234,8 @@ gimbal_ctrl.rotate_with_degree(rm_define.gimbal_up,35)
 led_ctrl.set_top_led(rm_define.armor_top_all,255,255,0,rm_define.effect_flash)    
 led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,0,rm_define.effect_flash)
 gimbal_ctrl.rotate_with_degree(rm_define.gimbal_down,35)
+
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Rotate gimbal and pitch example:
 
@@ -246,6 +272,8 @@ led_ctrl.set_top_led(rm_define.armor_top_all,255,255,0,rm_define.effect_flash)
 led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,0,rm_define.effect_flash)
 gimbal_ctrl.rotate_with_degree(rm_define.gimbal_left,180)
 
+'''----------------------------------------------------------------------------------------------------------------'''
+
 # Drive sideways side to side example 1:
 
 robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
@@ -253,7 +281,9 @@ while True:
     chassis_ctrl.set_wheel_speed(-30,30,30,-30)
     time.sleep(3)
     chassis_ctrl.set_wheel_speed(30,-30,-30,30)
-    time.sleep(3)    
+    time.sleep(3)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Drive sideways side to side example 2:
 
@@ -263,23 +293,31 @@ while True:
     chassis_ctrl.move_with_time(90,3)
     chassis_ctrl.move_with_time(-90,3)
     
+'''----------------------------------------------------------------------------------------------------------------'''
+    
 # Drive front sideways circle right example:
 
 robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 while True:
-    chassis_ctrl.set_wheel_speed(80,-80,-20,20)    
+    chassis_ctrl.set_wheel_speed(80,-80,-20,20)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Drive front sideways circle left example:
 
 robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 while True:
-    chassis_ctrl.set_wheel_speed(-80,80,20,-20)    
+    chassis_ctrl.set_wheel_speed(-80,80,20,-20)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Drive rear sideways circle right example:
 
 robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 while True:
     chassis_ctrl.set_wheel_speed(20,-20,-80,80)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Drive rear sideways circle left example:
 
@@ -295,6 +333,8 @@ while True:
     time.sleep(10)
     chassis_ctrl.set_wheel_speed(80,-80,-20,20)
     time.sleep(10)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # Drive rear sideways circle right and left example:
 
@@ -303,7 +343,9 @@ while True:
     chassis_ctrl.set_wheel_speed(20,-20,-80,80)
     time.sleep(10)
     chassis_ctrl.set_wheel_speed(-20,20,80,-80)
-    time.sleep(10)    
+    time.sleep(10)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
 
 # For-loop blinking LED's rate example:
 
@@ -312,6 +354,8 @@ for i in range(10):
     led_ctrl.set_top_led(rm_define.armor_top_all, 255, 0, 0, rm_define.effect_flash)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 255, 255, 0, rm_define.effect_flash)
     time.sleep(1)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
     
 # Drive and turn around example 1:
 
@@ -326,6 +370,8 @@ while True:
     chassis_ctrl.set_wheel_speed(30,30,30,30)
     time.sleep(3)
     
+'''----------------------------------------------------------------------------------------------------------------'''
+    
 # Drive and turn around example 2:
 
 while True:
@@ -336,6 +382,8 @@ while True:
     chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
     chassis_ctrl.set_wheel_speed(30,30,30,30)
     time.sleep(4)
+    
+'''----------------------------------------------------------------------------------------------------------------'''
     
 # For-loop blinking LED's rate example:
 
