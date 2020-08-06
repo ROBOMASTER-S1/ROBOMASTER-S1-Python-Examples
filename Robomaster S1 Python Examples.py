@@ -510,16 +510,16 @@ def start():
 def start():
     robot_ctrl.set_mode(rm_define.robot_mode_free)
     chassis_ctrl.set_rotate_speed(50)
-    led_ctrl.set_top_led(rm_define.armor_top_all, 0, 255, 255, rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 0, 255, 255, rm_define.effect_always_on)
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
     time.sleep(1)
     led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_always_on)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_always_on)
     chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,360)
     time.sleep(1)
-    led_ctrl.set_top_led(rm_define.armor_top_all, 0, 255, 255, rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all, 0, 255, 255, rm_define.effect_always_on)
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
 
 '''----------------------------------------------------------------------------------------------------------------'''
