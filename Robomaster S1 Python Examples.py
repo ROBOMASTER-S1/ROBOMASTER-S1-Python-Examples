@@ -401,7 +401,7 @@ def start():
         chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
         chassis_ctrl.set_wheel_speed(30,30,30,30)
         time.sleep(4)
-        chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
+        chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,180)
         chassis_ctrl.set_wheel_speed(30,30,30,30)
         time.sleep(4)
 
@@ -415,7 +415,7 @@ def start():
     for i in range(2):
         chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
         chassis_ctrl.move_with_time(0,4)
-        chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
+        chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,180)
         chassis_ctrl.move_with_time(0,4)
         
 '''----------------------------------------------------------------------------------------------------------------'''
