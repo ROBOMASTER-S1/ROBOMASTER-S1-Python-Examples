@@ -524,6 +524,37 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
+# Make the top right and the top left armor LED's chase forward, while changing two, different colours.
+# Make the bottom right, left, front and back armor LED's change two, different colours. Type and execute/run
+# the program below and see what happens.
+
+def start():
+    x=0
+    top_led_pos=[1,2,3,4,5,6,7,8]
+    while True:
+        for i in top_led_pos:
+            led_ctrl.set_top_led(rm_define.armor_top_right,255,0,255,rm_define.effect_always_off)
+            led_ctrl.set_single_led(rm_define.armor_top_right,[i],rm_define.effect_always_on)
+            led_ctrl.set_top_led(rm_define.armor_top_left,0,255,255,rm_define.effect_always_off)
+            led_ctrl.set_single_led(rm_define.armor_top_left,[i],rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,255,0,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,0,255,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,255,0,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,0,255,255,rm_define.effect_always_on)
+            time.sleep(.02)
+        for i in top_led_pos:
+            led_ctrl.set_top_led(rm_define.armor_top_right,0,255,255,rm_define.effect_always_off)
+            led_ctrl.set_single_led(rm_define.armor_top_right,[i],rm_define.effect_always_on)
+            led_ctrl.set_top_led(rm_define.armor_top_left,255,0,255,rm_define.effect_always_off)
+            led_ctrl.set_single_led(rm_define.armor_top_left,[i],rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,0,255,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,255,0,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,0,255,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,255,0,255,rm_define.effect_always_on)
+            time.sleep(.02)
+            
+'''----------------------------------------------------------------------------------------------------------------'''
+
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
 
 '''----------------------------------------------------------------------------------------------------------------'''
