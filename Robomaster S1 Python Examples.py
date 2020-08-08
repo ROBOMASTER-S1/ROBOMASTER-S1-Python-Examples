@@ -524,9 +524,9 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Make the top right and the top left armor LED's chase forward, while changing two, different colours.
-# Make the bottom right, left, front and back armor LED's change two, different colours. Type and execute/run
-# the program below and see what happens.
+# Make the top right and the top left armor LED's chase forward, while changing two, different
+# colours. Make the bottom right, left, front and back armor LED's change two, different colours.
+# Type and execute/run the program below and see what happens.
 
 def start():
     x=0
