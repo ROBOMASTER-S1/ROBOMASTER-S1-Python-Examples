@@ -530,28 +530,28 @@ def start():
 
 def start():
     top_led_pos=[1,2,3,4,5,6,7,8]
+    a,b,c,d,e,f=[255,0,255,0,255,255]
     while True:
         for i in top_led_pos:
-            led_ctrl.set_top_led(rm_define.armor_top_right,255,0,255,rm_define.effect_always_off)
+            led_ctrl.set_top_led(rm_define.armor_top_right,a,b,c,rm_define.effect_always_off)
             led_ctrl.set_single_led(rm_define.armor_top_right,[i],rm_define.effect_always_on)
-            led_ctrl.set_top_led(rm_define.armor_top_left,0,255,255,rm_define.effect_always_off)
+            led_ctrl.set_top_led(rm_define.armor_top_left,d,e,f,rm_define.effect_always_off)
             led_ctrl.set_single_led(rm_define.armor_top_left,[i],rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,255,0,255,rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,0,255,255,rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,255,0,255,rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,0,255,255,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,a,b,c,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,d,e,f,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,a,b,c,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,d,e,f,rm_define.effect_always_on)
             time.sleep(.02)
         for i in top_led_pos:
-            led_ctrl.set_top_led(rm_define.armor_top_right,0,255,255,rm_define.effect_always_off)
+            led_ctrl.set_top_led(rm_define.armor_top_right,d,e,f,rm_define.effect_always_off)
             led_ctrl.set_single_led(rm_define.armor_top_right,[i],rm_define.effect_always_on)
-            led_ctrl.set_top_led(rm_define.armor_top_left,255,0,255,rm_define.effect_always_off)
+            led_ctrl.set_top_led(rm_define.armor_top_left,a,b,c,rm_define.effect_always_off)
             led_ctrl.set_single_led(rm_define.armor_top_left,[i],rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,0,255,255,rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,255,0,255,rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,0,255,255,rm_define.effect_always_on)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,255,0,255,rm_define.effect_always_on)
-            time.sleep(.02)
-            
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,d,e,f,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,a,b,c,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,d,e,f,rm_define.effect_always_on)
+            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,a,b,c,rm_define.effect_always_on)
+            time.sleep(.02)            
 '''----------------------------------------------------------------------------------------------------------------'''
 
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
