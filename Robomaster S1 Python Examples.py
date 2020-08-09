@@ -11,7 +11,7 @@
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Make the Robomaster drive non-stop while making all the LEDS flash-rotate two, different colours.
+# Make the Robomaster drive non-stop while making all the LED's flash-rotate two, different colours.
 # Type and execute/run the program example below and see what happens.
 
 def start():
@@ -43,7 +43,7 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Make all the LEDs flash ten times a second, while making the chassis rocks back and forth.
+# Make all the LED's flash ten times a second, while making the chassis rocks back and forth.
 # Type and execute/run the program example below and see what happens.
 
 def start():
@@ -59,7 +59,7 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Turn on the Robomaster's gun light and make the LEDs pulsate, while the chassis rocks back and forth.
+# Turn on the Robomaster's gun light and make the LED's pulsate, while the chassis rocks back and forth.
 # Type and execute/run this program example below and see what happens.
 
 def start():
@@ -75,7 +75,7 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Turn on the Robomaster's gun light and make the LEDS pulsate, while rotating clockwise and anti
+# Turn on the Robomaster's gun light and make the LED's pulsate, while rotating clockwise and anti
 # clockwise. Type and execute/run the program example below and see what happens.
 
 def start():
@@ -90,7 +90,7 @@ def start():
 '''----------------------------------------------------------------------------------------------------------------'''
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized
-# before he works his bright cyan lights and starts to move his chassis forward for one
+# before he works his bright cyan LED's and starts to move his chassis forward for one
 # second each time the red heart is shown to him. Type and execute/run the program example
 # below and see what happens.
 
@@ -111,7 +111,7 @@ def vision_recognized_marker_trans_red_heart(msg):
 '''----------------------------------------------------------------------------------------------------------------'''
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized
-# before he works his bright red lights and starts blinking them twice. Type and execute/run
+# before he works his bright red LED's and starts blinking them twice. Type and execute/run
 # the program example below and see what happens.
 
 def start():
@@ -183,8 +183,8 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Rotate the turret and set the speed to 20, while making the lights
-# change from yellow to red, and back to yellow.
+# Rotate the turret and set the speed to 20, while making the LED's change from yellow to red
+# and back to yellow.
 
 def start():
     robot_ctrl.set_mode(rm_define.robot_mode_free)
@@ -222,7 +222,7 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
-# Rotate the turret and set the speed to 20, while changing all the lights from
+# Rotate the turret and set the speed to 20, while changing all the LED's from
 # red to yellow.
 
 def start():
@@ -418,6 +418,124 @@ def start():
         chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,180)
         chassis_ctrl.move_with_time(0,4)
         
+'''----------------------------------------------------------------------------------------------------------------'''
+# Drive and turn around example 4:
+
+# Take your time, don’t rush. Type and execute/run this Robomaster S1 program example below and see what happens.
+
+def start():
+
+# Store list variables and values:
+    
+    turn_clockwise=[30,-30,30,-30]
+    turn_anticlockwise=[-30,30,-30,30]
+    drive_straight_speed=[30,30,30,30]
+    leds=[0,255];time_delay=[4,8]
+
+# Set gimbal to follow chassis.
+    
+    robot_ctrl.set_mode(
+        rm_define.robot_mode_gimbal_follow
+        )
+
+# Create a never ending while-loop.
+
+    while True:
+
+# Make the top and bottom LED's colour to yellow and flash.
+
+        led_ctrl.set_top_led(
+            rm_define.armor_top_all,
+            leds[1],leds[1],leds[0],
+            rm_define.effect_flash
+            )
+        led_ctrl.set_bottom_led(
+            rm_define.armor_bottom_all,
+            leds[1],leds[1],leds[0],
+            rm_define.effect_flash
+            )
+
+# Make the chassis turn clockwise at speed 30,-30.
+
+        chassis_ctrl.set_wheel_speed(
+            turn_clockwise[0],turn_clockwise[1],
+            turn_clockwise[2],turn_clockwise[3]
+            )
+# Set a time.sleep() function with the variable 'time_delay'.
+
+        time.sleep(time_delay[0])
+
+# Make the top and bottom LED's colour to red and breath.
+
+        led_ctrl.set_top_led(
+            rm_define.armor_top_all,
+            leds[1],leds[0],leds[0],
+            rm_define.effect_breath
+            )
+        led_ctrl.set_bottom_led(
+            rm_define.armor_bottom_all,
+            leds[1],leds[0],leds[0],
+            rm_define.effect_breath
+            )
+# Make the chassis drive straight ahead at speed 30,-30.
+
+        chassis_ctrl.set_wheel_speed(
+            drive_straight_speed[0],drive_straight_speed[1],
+            drive_straight_speed[2],drive_straight_speed[3]
+            )
+
+# Set a time.sleep() function with the variable 'time_delay'.
+
+        time.sleep(time_delay[1])
+
+# Make the top and bottom LED's colour to yellow and flash.
+
+        led_ctrl.set_top_led(
+            rm_define.armor_top_all,
+            leds[1],leds[1],leds[0],
+            rm_define.effect_flash
+            )
+        led_ctrl.set_bottom_led(
+            rm_define.armor_bottom_all,
+            leds[1],leds[1],leds[0],
+            rm_define.effect_flash
+            )
+
+# Make the chassis turn anticlockwise at speed 30,-30.
+
+        chassis_ctrl.set_wheel_speed(
+            turn_anticlockwise[0],turn_anticlockwise[1],
+            turn_anticlockwise[2],turn_anticlockwise[3]
+            )
+
+# Set a time.sleep() function with the variable 'time_delay'.
+
+        time.sleep(time_delay[0])
+
+# Make the top and bottom LED's colour to red and breath.
+
+        led_ctrl.set_top_led(
+            rm_define.armor_top_all,
+            leds[1],leds[0],leds[0],
+            rm_define.effect_breath
+            )
+        led_ctrl.set_bottom_led(
+            rm_define.armor_bottom_all,
+            leds[1],leds[0],leds[0],
+            rm_define.effect_breath
+            )
+
+# Make the chassis drive straight ahead at speed 30,-30.
+
+        chassis_ctrl.set_wheel_speed(
+            drive_straight_speed[0],drive_straight_speed[1],
+            drive_straight_speed[2],drive_straight_speed[3]
+            )
+
+# Set a time.sleep() function with the variable 'time_delay'.
+
+        time.sleep(time_delay[1]) 
+
 '''----------------------------------------------------------------------------------------------------------------'''
 
 # Drive the chassis at -45, 45 and 135, -135 degrees
