@@ -382,14 +382,14 @@ def start():
 def start():
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
     while True:
-        chassis_ctrl.set_wheel_speed(-30,30,-30,30)
-        time.sleep(4)
-        chassis_ctrl.set_wheel_speed(30,30,30,30)
-        time.sleep(3)
         chassis_ctrl.set_wheel_speed(30,-30,30,-30)
         time.sleep(4)
         chassis_ctrl.set_wheel_speed(30,30,30,30)
-        time.sleep(3)
+        time.sleep(8)
+        chassis_ctrl.set_wheel_speed(-30,30,-30,30)
+        time.sleep(4)
+        chassis_ctrl.set_wheel_speed(30,30,30,30)
+        time.sleep(8)
 
 '''----------------------------------------------------------------------------------------------------------------'''
 
