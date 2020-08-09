@@ -462,6 +462,7 @@ def start():
             turn_clockwise[0],turn_clockwise[1],
             turn_clockwise[2],turn_clockwise[3]
             )
+    
 # Set a time.sleep() function with the variable 'time_delay'.
 
         time.sleep(time_delay[0])
@@ -478,6 +479,7 @@ def start():
             leds[1],leds[0],leds[0],
             rm_define.effect_breath
             )
+        
 # Make the chassis drive straight ahead at speed 30,-30.
 
         chassis_ctrl.set_wheel_speed(
