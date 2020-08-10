@@ -672,7 +672,8 @@ def start():
             led_ctrl.set_bottom_led(rm_define.armor_bottom_left,a,b,c,rm_define.effect_always_on)
             led_ctrl.set_bottom_led(rm_define.armor_bottom_front,d,e,f,rm_define.effect_always_on)
             led_ctrl.set_bottom_led(rm_define.armor_bottom_back,a,b,c,rm_define.effect_always_on)
-            time.sleep(.02)            
+            time.sleep(.02)
+            
 '''----------------------------------------------------------------------------------------------------------------'''
 
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
