@@ -689,7 +689,6 @@ def start():
     def blaster_fire_example():
 
         robot_ctrl.set_mode(rm_define.robot_mode_free)
-        media_ctrl.zoom_value_update(1)
         
         while True:
             led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
@@ -697,6 +696,7 @@ def start():
 
             vision_ctrl.enable_detection(rm_define.vision_detection_people)
             vision_ctrl.cond_wait(rm_define.cond_recognized_people)
+            media_ctrl.zoom_value_update(1)
             
             while True:
                 randgimbal_speed=random.randint(20,100)
