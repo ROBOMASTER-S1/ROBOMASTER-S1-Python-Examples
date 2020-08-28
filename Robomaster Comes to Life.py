@@ -22,7 +22,7 @@
 # Chassis Follow Gimbal
 # Gimbal Free Mode
 # Chassis Free Mode
-# Scan Search
+# Scan Search with sound effect
 # Blaster Fire with sound effect
 # Sleep Mode
 # Detection Applause
