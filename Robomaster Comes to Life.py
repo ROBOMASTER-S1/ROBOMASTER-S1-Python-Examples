@@ -519,8 +519,6 @@ def start():
         if randscan==29:
             scan_search()
 
-media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
-
 led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
 led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_breath)
 led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_breath)
@@ -528,6 +526,7 @@ led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.eff
 led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led1,led1,rm_define.effect_breath)
 gimbal_ctrl.recenter()
 
+media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
 media_ctrl.cond_wait(rm_define.cond_sound_recognized_applause_thrice)
 
 led_ctrl.set_flash(rm_define.armor_all,1)
