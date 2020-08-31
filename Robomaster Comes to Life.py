@@ -31,6 +31,13 @@
 # put a lot of time into creating it. It sure wasn't no cakewalk when the gimbal and chassis
 # would conflict each other during practice execution/runs before I finally figured it all out.
 
+robot=robot_ctrl
+gimbal=gimbal_ctrl
+chassis=chassis_ctrl
+media=media_ctrl
+led=led_ctrl
+define=rm_define
+
 rotate_speed=(20,30,50,100,200)
 scan_speed=(40);drive_speed=(0.2)
 wheel_degree=(0,180,90,-90,45,-45,135,-135)
@@ -43,7 +50,7 @@ def start():
 
     def gimbal_follow_chassis():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+        robot.set_mode(define.robot_mode_gimbal_follow)
 
         def gimbal_follow_chassis_right():
 
@@ -52,26 +59,26 @@ def start():
                 randrotate=random.randint(1,180)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=180:
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    chassis_ctrl.set_rotate_speed(randspeed)
-                    chassis_ctrl.rotate_with_degree(rm_define.clockwise,randrotate)
+                    chassis.set_rotate_speed(randspeed)
+                    chassis.rotate_with_degree(define.clockwise,randrotate)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -88,26 +95,26 @@ def start():
                 randrotate=random.randint(1,180)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=180:
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    chassis_ctrl.set_rotate_speed(randspeed)
-                    chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,randrotate)
+                    chassis.set_rotate_speed(randspeed)
+                    chassis.rotate_with_degree(define.anticlockwise,randrotate)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -121,8 +128,7 @@ def start():
 
     def chassis_follow_gimbal():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_chassis_follow)
-        gimbal_ctrl.recenter()
+        robot.set_mode(define.robot_mode_chassis_follow)
 
         def chassis_follow_gimbal_right():
 
@@ -132,35 +138,35 @@ def start():
                 randrotate=random.randint(1,180)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=180:
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    gimbal_ctrl.set_rotate_speed(randspeed)
-                    gimbal_ctrl.rotate_with_degree(rm_define.gimbal_right,randrotate)
+                    gimbal.set_rotate_speed(randspeed)
+                    gimbal.rotate_with_degree(define.gimbal_right,randrotate)
 
-                    led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led1,led1,rm_define.effect_always_on)
+                    led.set_top_led(define.armor_top_all,led2,led2,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led1,led1,define.effect_always_on)
 
-                    chassis_ctrl.set_trans_speed(drive_speed)
-                    chassis_ctrl.move_with_time(randwheel,seconds)
+                    chassis.set_trans_speed(drive_speed)
+                    chassis.move_with_time(randwheel,seconds)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -178,35 +184,35 @@ def start():
                 randrotate=random.randint(1,180)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=180:
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led2,led1,rm_define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
+                    led.set_top_led(define.armor_top_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_left,led2,led2,led1,define.effect_flash)
 
-                    gimbal_ctrl.set_rotate_speed(randspeed)
-                    gimbal_ctrl.rotate_with_degree(rm_define.gimbal_left,randrotate)
+                    gimbal.set_rotate_speed(randspeed)
+                    gimbal.rotate_with_degree(define.gimbal_left,randrotate)
 
-                    led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led1,led1,rm_define.effect_always_on)
+                    led.set_top_led(define.armor_top_all,led2,led2,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led1,led1,define.effect_always_on)
 
-                    chassis_ctrl.set_trans_speed(drive_speed)
-                    chassis_ctrl.move_with_time(randwheel,seconds)
+                    chassis.set_trans_speed(drive_speed)
+                    chassis.move_with_time(randwheel,seconds)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -220,7 +226,7 @@ def start():
 
     def gimbal_free_mode():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_free)
+        robot.set_mode(define.robot_mode_free)
 
         def gimbal_free_mode_right():
 
@@ -229,26 +235,26 @@ def start():
                 randrotate=random.randint(1,90)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=90:
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    gimbal_ctrl.set_rotate_speed(randspeed)
-                    gimbal_ctrl.rotate_with_degree(rm_define.gimbal_right,randrotate)
+                    gimbal.set_rotate_speed(randspeed)
+                    gimbal.rotate_with_degree(define.gimbal_right,randrotate)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -265,26 +271,26 @@ def start():
                 randrotate=random.randint(1,90)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=90:
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    gimbal_ctrl.set_rotate_speed(randspeed)
-                    gimbal_ctrl.rotate_with_degree(rm_define.gimbal_left,randrotate)
+                    gimbal.set_rotate_speed(randspeed)
+                    gimbal.rotate_with_degree(define.gimbal_left,randrotate)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -298,7 +304,7 @@ def start():
 
     def chassis_free_mode():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_free)
+        robot.set_mode(define.robot_mode_free)
 
         def chassis_free_mode_right():
 
@@ -307,26 +313,26 @@ def start():
                 randrotate=random.randint(1,90)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=90:
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    chassis_ctrl.set_rotate_speed(randspeed)
-                    chassis_ctrl.rotate_with_degree(rm_define.clockwise,randrotate)
+                    chassis.set_rotate_speed(randspeed)
+                    chassis.rotate_with_degree(define.clockwise,randrotate)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -343,26 +349,26 @@ def start():
                 randrotate=random.randint(1,90)
 
                 if randspeed==20:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[0])
+                    led.set_flash(define.armor_all,blink_rate[0])
                 elif randspeed==30:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[1])
+                    led.set_flash(define.armor_all,blink_rate[1])
                 elif randspeed==50:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[2])
+                    led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==100:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[3])
+                    led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==200:
-                    led_ctrl.set_flash(rm_define.armor_all,blink_rate[4])
+                    led.set_flash(define.armor_all,blink_rate[4])
 
                 if randrotate<=90:
-                    led_ctrl.set_top_led(rm_define.armor_top_right,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led1,led1,rm_define.effect_always_on)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_always_on)
-                    led_ctrl.set_top_led(rm_define.armor_top_left,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_flash)
-                    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led2,led1,rm_define.effect_flash)
+                    led.set_top_led(define.armor_top_right,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_left,led2,led1,led1,define.effect_always_on)
+                    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_always_on)
+                    led.set_top_led(define.armor_top_left,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_flash)
+                    led.set_bottom_led(define.armor_bottom_front,led2,led2,led1,define.effect_flash)
 
-                    chassis_ctrl.set_rotate_speed(randspeed)
-                    chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,randrotate)
+                    chassis.set_rotate_speed(randspeed)
+                    chassis.rotate_with_degree(define.anticlockwise,randrotate)
 
                     commands_exit=random.randint(1,2)
                     if commands_exit==1:
@@ -376,62 +382,62 @@ def start():
 
     def scan_search():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_free)
+        robot.set_mode(define.robot_mode_free)
 
         def scan_search_right():
 
-            gimbal_ctrl.set_rotate_speed(scan_speed)
-            led_ctrl.set_top_led(rm_define.armor_top_all,led1,led2,led1,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led1,led2,led1,rm_define.effect_breath)
-            led_ctrl.gun_led_on()
+            gimbal.set_rotate_speed(scan_speed)
+            led.set_top_led(define.armor_top_all,led1,led2,led1,define.effect_breath)
+            led.set_bottom_led(define.armor_bottom_all,led1,led2,led1,define.effect_breath)
+            led.gun_led_on()
 
             while True:
                 randgimbal_speed=random.randint(20,100)
                 randrotate=random.randint(1,250)
                 randangle=random.randint(-15,35)
 
-                gimbal_ctrl.set_rotate_speed(randgimbal_speed)
-                media_ctrl.play_sound(rm_define.media_sound_gimbal_rotate,wait_for_complete_flag=False)
+                gimbal.set_rotate_speed(randgimbal_speed)
+                media.play_sound(define.media_sound_gimbal_rotate,wait_for_complete_flag=False)
 
-                gimbal_ctrl.set_rotate_speed(scan_speed)
-                media_ctrl.play_sound(rm_define.media_sound_scanning,wait_for_complete_flag=False)
-                gimbal_ctrl.angle_ctrl(randrotate,randangle)
+                gimbal.set_rotate_speed(scan_speed)
+                media.play_sound(define.media_sound_scanning,wait_for_complete_flag=False)
+                gimbal.angle_ctrl(randrotate,randangle)
 
                 commands_exit=random.randint(1,2)
                 if commands_exit==1:
                     continue
                 elif commands_exit==2:
-                    gimbal_ctrl.recenter()
-                    led_ctrl.gun_led_off()
+                    gimbal.recenter()
+                    led.gun_led_off()
                     break
 
         scan_search_right()
 
         def scan_search_left():
 
-            gimbal_ctrl.set_rotate_speed(scan_speed)
-            led_ctrl.set_top_led(rm_define.armor_top_all,led1,led2,led1,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led1,led2,led1,rm_define.effect_breath)
-            led_ctrl.gun_led_on()
+            gimbal.set_rotate_speed(scan_speed)
+            led.set_top_led(define.armor_top_all,led1,led2,led1,define.effect_breath)
+            led.set_bottom_led(define.armor_bottom_all,led1,led2,led1,define.effect_breath)
+            led.gun_led_on()
 
             while True:
                 randgimbal_speed=random.randint(20,100)
                 randrotate=random.randint(-250,1)
                 randangle=random.randint(-15,35)
 
-                gimbal_ctrl.set_rotate_speed(randgimbal_speed)
-                media_ctrl.play_sound(rm_define.media_sound_gimbal_rotate,wait_for_complete_flag=False)
+                gimbal.set_rotate_speed(randgimbal_speed)
+                media.play_sound(define.media_sound_gimbal_rotate,wait_for_complete_flag=False)
 
-                gimbal_ctrl.set_rotate_speed(scan_speed)
-                media_ctrl.play_sound(rm_define.media_sound_scanning,wait_for_complete_flag=False)
-                gimbal_ctrl.angle_ctrl(randrotate,randangle)
+                gimbal.set_rotate_speed(scan_speed)
+                media.play_sound(define.media_sound_scanning,wait_for_complete_flag=False)
+                gimbal.angle_ctrl(randrotate,randangle)
 
                 commands_exit=random.randint(1,2)
                 if commands_exit==1:
                     continue
                 elif commands_exit==2:
-                    gimbal_ctrl.recenter()
-                    led_ctrl.gun_led_off()
+                    gimbal.recenter()
+                    led.gun_led_off()
                     break
 
         scan_search_left()
@@ -440,53 +446,53 @@ def start():
 
     def blaster_fire():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_free)
+        robot.set_mode(define.robot_mode_free)
 
         while True:
             randgimbal_speed=random.randint(20,100)
             randup=random.randint(1,55)
 
-            gimbal_ctrl.set_rotate_speed(randgimbal_speed)
-            media_ctrl.play_sound(rm_define.media_sound_gimbal_rotate,wait_for_complete_flag=False)
+            gimbal.set_rotate_speed(randgimbal_speed)
+            media.play_sound(define.media_sound_gimbal_rotate,wait_for_complete_flag=False)
 
-            led_ctrl.set_flash(rm_define.armor_all,6)
-            led_ctrl.set_top_led(rm_define.armor_top_all,led2,led1,led1,rm_define.effect_marquee)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led1,led1,rm_define.effect_flash)
+            led.set_flash(define.armor_all,6)
+            led.set_top_led(define.armor_top_all,led2,led1,led1,define.effect_marquee)
+            led.set_bottom_led(define.armor_bottom_all,led2,led1,led1,define.effect_flash)
 
-            gimbal_ctrl.rotate_with_degree(rm_define.gimbal_up,randup)
+            gimbal.rotate_with_degree(define.gimbal_up,randup)
 
-            led_ctrl.set_flash(rm_define.armor_all,8)
-            led_ctrl.set_top_led(rm_define.armor_top_all,led1,led2,led2,rm_define.effect_flash)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led1,led2,led2,rm_define.effect_flash)
+            led.set_flash(define.armor_all,8)
+            led.set_top_led(define.armor_top_all,led1,led2,led2,define.effect_flash)
+            led.set_bottom_led(define.armor_bottom_all,led1,led2,led2,define.effect_flash)
 
-            media_ctrl.play_sound(rm_define.media_sound_shoot,wait_for_complete_flag=True)
-            media_ctrl.play_sound(rm_define.media_sound_shoot,wait_for_complete_flag=True)
+            media.play_sound(define.media_sound_shoot,wait_for_complete_flag=True)
+            media.play_sound(define.media_sound_shoot,wait_for_complete_flag=True)
 
             commands_exit=random.randint(1,2)
             if commands_exit==1:
                 continue
             elif commands_exit==2:
-                led_ctrl.set_flash(rm_define.armor_all,6)
-                led_ctrl.set_top_led(rm_define.armor_top_all,led2,led1,led1,rm_define.effect_marquee)
-                led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led1,led1,rm_define.effect_flash)
-                gimbal_ctrl.recenter()
+                led.set_flash(define.armor_all,6)
+                led.set_top_led(define.armor_top_all,led2,led1,led1,define.effect_marquee)
+                led.set_bottom_led(define.armor_bottom_all,led2,led1,led1,define.effect_flash)
+                gimbal.recenter()
                 break
 
 # Sleep_mode:
 
     def sleep_mode():
 
-        robot_ctrl.set_mode(rm_define.robot_mode_free)
+        robot.set_mode(define.robot_mode_free)
 
         while True:
             randdelay=random.randint(1,2)
 
-            led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led1,led1,rm_define.effect_breath)
-            gimbal_ctrl.recenter()
+            led.set_top_led(define.armor_top_all,led2,led2,led1,define.effect_breath)
+            led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_breath)
+            led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_breath)
+            led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_breath)
+            led.set_bottom_led(define.armor_bottom_front,led2,led1,led1,define.effect_breath)
+            gimbal.recenter()
             time.sleep(randdelay)
 
             commands_exit=random.randint(1,2)
@@ -519,37 +525,37 @@ def start():
         if randscan==29:
             scan_search()
 
-led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
-led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_breath)
-led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_breath)
-led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_breath)
-led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led1,led1,rm_define.effect_breath)
-gimbal_ctrl.recenter()
+led.set_top_led(define.armor_top_all,led2,led2,led1,define.effect_breath)
+led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_breath)
+led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_breath)
+led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_breath)
+led.set_bottom_led(define.armor_bottom_front,led2,led1,led1,define.effect_breath)
+gimbal.recenter()
 
-media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
-media_ctrl.cond_wait(rm_define.cond_sound_recognized_applause_thrice)
+media.enable_sound_recognition(define.sound_detection_applause)
+media.cond_wait(define.cond_sound_recognized_applause_thrice)
 
-led_ctrl.set_flash(rm_define.armor_all,1)
-led_ctrl.set_top_led(rm_define.armor_top_all,led2,led1,led1,rm_define.effect_marquee)
-led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led1,led1,rm_define.effect_flash)
-media_ctrl.play_sound(rm_define.media_sound_count_down,wait_for_complete_flag=True)
+led.set_flash(define.armor_all,1)
+led.set_top_led(define.armor_top_all,led2,led1,led1,define.effect_marquee)
+led.set_bottom_led(define.armor_bottom_all,led2,led1,led1,define.effect_flash)
+media.play_sound(define.media_sound_count_down,wait_for_complete_flag=True)
 
 def sound_recognized_applause_twice(msg):
 
-    robot_ctrl.set_mode(rm_define.robot_mode_free)
+    robot.set_mode(define.robot_mode_free)
 
-    led_ctrl.gun_led_off()
-    led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_left,led2,led2,led1,rm_define.effect_breath)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_right,led2,led2,led1,rm_define.effect_breath)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_back,led2,led2,led2,rm_define.effect_breath)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_front,led2,led1,led1,rm_define.effect_breath)
-    gimbal_ctrl.recenter()
+    led.gun_led_off()
+    led.set_top_led(define.armor_top_all,led2,led2,led1,define.effect_breath)
+    led.set_bottom_led(define.armor_bottom_left,led2,led2,led1,define.effect_breath)
+    led.set_bottom_led(define.armor_bottom_right,led2,led2,led1,define.effect_breath)
+    led.set_bottom_led(define.armor_bottom_back,led2,led2,led2,define.effect_breath)
+    led.set_bottom_led(define.armor_bottom_front,led2,led1,led1,define.effect_breath)
+    gimbal.recenter()
 
-    media_ctrl.cond_wait(rm_define.cond_sound_recognized_applause_thrice)
+    media.cond_wait(define.cond_sound_recognized_applause_thrice)
 
-    led_ctrl.set_flash(rm_define.armor_all,1)
-    led_ctrl.set_top_led(rm_define.armor_top_all,led2,led1,led1,rm_define.effect_marquee)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led1,led1,rm_define.effect_flash)
-    media_ctrl.play_sound(rm_define.media_sound_count_down,wait_for_complete_flag=True)
-    gimbal_ctrl.recenter()
+    led.set_flash(define.armor_all,1)
+    led.set_top_led(define.armor_top_all,led2,led1,led1,define.effect_marquee)
+    led.set_bottom_led(define.armor_bottom_all,led2,led1,led1,define.effect_flash)
+    media.play_sound(define.media_sound_count_down,wait_for_complete_flag=True)
+    gimbal.recenter()
