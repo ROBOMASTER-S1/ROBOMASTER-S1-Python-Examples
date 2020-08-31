@@ -819,10 +819,10 @@ def start():
         while True:
             led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
             led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led2,1,rm_define.effect_breath)
-
+            
+            media_ctrl.zoom_value_update(1)
             vision_ctrl.enable_detection(rm_define.vision_detection_people)
             vision_ctrl.cond_wait(rm_define.cond_recognized_people)
-            media_ctrl.zoom_value_update(1)
             
             while True:
                 randgimbal_speed=random.randint(20,100)
