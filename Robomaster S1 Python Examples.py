@@ -301,6 +301,7 @@ def start():
 # its last, 180 degree turn
 
 def start():
+    
     robot_ctrl.set_mode(rm_define.robot_mode_free)
     
     chassis_ctrl.set_rotate_speed(50)
@@ -340,6 +341,8 @@ def start():
 # Type and execute/run the program example below and see what happens.
 
 def start():
+    
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)    
 
     while True:
         chassis_ctrl.set_wheel_speed(20,20,20,20)
@@ -424,7 +427,9 @@ def start():
 # Drive and turn around example 2:
 
 def start():
-
+    
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+    
     chassis_ctrl.set_rotate_speed(20)
 
     while True:
@@ -443,7 +448,9 @@ def start():
 # Drive and turn around example 3:
 
 def start():
-
+    
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
+    
     chassis_ctrl.set_trans_speed(0.3)
     chassis_ctrl.set_rotate_speed(50)
 
@@ -669,6 +676,8 @@ def start():
 # Type and execute/run the program example below and see what happens.
 
 def start():
+    
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
     chassis_ctrl.set_trans_speed(0.2)
 
@@ -699,7 +708,7 @@ seconds=2
 
 def start():
 
-    robot_ctrl.set_mode(rm_define.robot_mode_chassis_follow)
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
     for i in wheel_degree:
         chassis_ctrl.set_trans_speed(drive_speed)
@@ -715,7 +724,7 @@ seconds=2
 
 def start():
 
-    robot_ctrl.set_mode(rm_define.robot_mode_chassis_follow)
+    robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
     for i in wheel_degree:
         chassis_ctrl.set_trans_speed(drive_speed)
