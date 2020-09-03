@@ -454,7 +454,7 @@ def start():
     chassis_ctrl.set_trans_speed(0.2)
     chassis_ctrl.set_rotate_speed(50)
 
-    for i in range(2):
+    while True:
         chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
 
         chassis_ctrl.move_with_time(0,4)
