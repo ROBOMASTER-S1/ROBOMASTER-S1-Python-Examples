@@ -406,22 +406,22 @@ def start():
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
     while True:
-        chassis_ctrl.set_wheel_speed(20,-20,20,-20)
+        chassis_ctrl.set_wheel_speed(30,-30,30,-30)
 
         time.sleep(4)
 
-        chassis_ctrl.set_wheel_speed(20,20,20,20)
-
-        time.sleep(8)
-
-        chassis_ctrl.set_wheel_speed(-20,20,-20,20)
+        chassis_ctrl.set_wheel_speed(30,30,30,30)
 
         time.sleep(4)
 
-        chassis_ctrl.set_wheel_speed(20,20,20,20)
+        chassis_ctrl.set_wheel_speed(-30,30,-30,30)
 
-        time.sleep(8)
+        time.sleep(4)
 
+        chassis_ctrl.set_wheel_speed(30,30,30,30)
+
+        time.sleep(4)
+        
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
 # Drive and turn around example 2:
@@ -430,19 +430,19 @@ def start():
     
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
     
-    chassis_ctrl.set_rotate_speed(20)
+    chassis_ctrl.set_rotate_speed(50)
 
     while True:
         chassis_ctrl.rotate_with_degree(rm_define.clockwise,180)
-        chassis_ctrl.set_wheel_speed(20,20,20,20)
+        chassis_ctrl.set_wheel_speed(30,30,30,30)
 
         time.sleep(4)
 
         chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,180)
-        chassis_ctrl.set_wheel_speed(20,20,20,20)
+        chassis_ctrl.set_wheel_speed(30,30,30,30)
 
         time.sleep(4)
-
+        
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
 # Drive and turn around example 3:
@@ -451,7 +451,7 @@ def start():
     
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
     
-    chassis_ctrl.set_trans_speed(0.3)
+    chassis_ctrl.set_trans_speed(0.2)
     chassis_ctrl.set_rotate_speed(50)
 
     for i in range(2):
