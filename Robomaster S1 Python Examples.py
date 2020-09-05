@@ -296,6 +296,25 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
+# Make Robomaster do the TWIST using a for-loop to make his chassis and his gimbal rock back and forth
+# three times. 
+
+def start():
+
+    robot_ctrl.set_mode(rm_define.robot_mode_free)
+    
+    chassis_ctrl.set_rotate_speed(120)
+    gimbal_ctrl.set_rotate_speed(120)
+
+    for i in range(3):
+        chassis_ctrl.rotate_with_time(rm_define.anticlockwise, 0.2)
+        gimbal_ctrl.rotate(rm_define.gimbal_left)
+        chassis_ctrl.rotate_with_time(rm_define.clockwise, 0.4)
+        gimbal_ctrl.rotate(rm_define.gimbal_right)
+        chassis_ctrl.rotate_with_time(rm_define.anticlockwise, 0.2)
+        
+'''----------------------------------------------------------------------------------------------------------------------------------------------------'''
+
 # Make the chassis turn a complete 180 degrees, while making the gimbal stay positioned at 0 degrees.
 # On each turn, make the LED's change to cyan, then red and back to cyan when the Robomaster makes
 # its last, 180 degree turn
