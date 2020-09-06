@@ -891,6 +891,91 @@ def start():
             
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
+# Make the Robomaster S1's leds change different colours whenever you show him the vision markers from
+# one through five. You can combine different vision markers to make Robomaster S1's leds change differnt
+# colours for one second each. You can also turn off the leds, simply by clapping your hands twice.
+# Type and execute/run this program example and see what happens.
+
+vision=vision_ctrl
+led=led_ctrl
+define=rm_define
+
+l1,l2=(0,255)
+
+def start():
+
+    vision.enable_detection(define.vision_detection_marker)
+    media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
+    vision.set_marker_detection_distance(1)
+
+    led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
+    led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+    while True:
+        vision.cond_wait(define.cond_recognized_marker_number_one)
+        vision.cond_wait(define.cond_recognized_marker_number_two)
+        vision.cond_wait(define.cond_recognized_marker_number_three)
+        vision.cond_wait(define.cond_recognized_marker_number_four)
+        vision.cond_wait(define.cond_recognized_marker_number_five)
+        media.cond_wait(define.cond_sound_recognized_applause_twice)
+
+def vision_recognized_marker_number_one(msg):
+
+    led.set_top_led(define.armor_top_all,l2,l1,l1,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l1,l1,define.effect_always_on)
+    time.sleep(1)
+
+    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+        led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
+        led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+def vision_recognized_marker_number_two(msg):
+
+    led.set_top_led(define.armor_top_all,l2,l2,l1,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l2,l1,define.effect_always_on)
+    time.sleep(1)
+
+    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+        led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
+        led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+def vision_recognized_marker_number_three(msg):
+
+    led.set_top_led(define.armor_top_all,l1,l1,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l1,l1,l2,define.effect_always_on)
+    time.sleep(1)
+
+    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+        led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
+        led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+def vision_recognized_marker_number_four(msg):
+
+    led.set_top_led(define.armor_top_all,l1,l2,l1,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l1,l2,l1,define.effect_always_on)
+    time.sleep(1)
+
+    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+        led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_off)
+        led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+def vision_recognized_marker_number_five(msg):
+
+    led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l1,l2,define.effect_always_on)
+    time.sleep(1)
+
+    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+        led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_off)
+        led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+def sound_recognized_applause_twice(msg):
+
+    led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
+    led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+'''----------------------------------------------------------------------------------------------------------------------------------------------------'''
+
 # Red Heart Examples
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
