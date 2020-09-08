@@ -830,8 +830,8 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make Robomaster fire his blaster every time he sees a person. Set the zoom value update from 1 to
-# 4 for farther distances.
+# Make Robomaster fire his blaster every time he sees a person. Set the vision marker
+# detection distance from 0.5 to 3 for farther distances.
 
 def start():
 
@@ -843,13 +843,14 @@ def start():
     def blaster_fire_example():
 
         robot_ctrl.set_mode(rm_define.robot_mode_free)
+
+        vision_ctrl.enable_detection(rm_define.vision_detection_people)
+        vision_ctrl.set_marker_detection_distance(1)
+
+        led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
+        led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led2,1,rm_define.effect_breath)
         
-        while True:
-            led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
-            led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led2,1,rm_define.effect_breath)
-            
-            media_ctrl.zoom_value_update(1)
-            vision_ctrl.enable_detection(rm_define.vision_detection_people)
+        while True:            
             vision_ctrl.cond_wait(rm_define.cond_recognized_people)
             
             while True:
@@ -882,7 +883,10 @@ def start():
                     led_ctrl.set_top_led(rm_define.armor_top_all,led2,led1,led1,rm_define.effect_marquee)
                     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led1,led1,rm_define.effect_flash)
                     
-                    gimbal_ctrl.recenter()                        
+                    gimbal_ctrl.recenter()
+
+                    led_ctrl.set_top_led(rm_define.armor_top_all,led2,led2,led1,rm_define.effect_breath)
+                    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,led2,led2,1,rm_define.effect_breath)                        
                     break
                 
 # Call up the blaster_fire_example function. Be sure to properly indent the function or it won't work.
@@ -903,21 +907,21 @@ define=rm_define
 l1,l2=(0,255)
 
 def start():
-
-    vision.enable_detection(define.vision_detection_marker)
+    
     media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
+    vision.enable_detection(define.vision_detection_marker)
     vision.set_marker_detection_distance(1)
 
     led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
     led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
 
     while True:
+        media.cond_wait(define.cond_sound_recognized_applause_twice)
         vision.cond_wait(define.cond_recognized_marker_number_one)
         vision.cond_wait(define.cond_recognized_marker_number_two)
         vision.cond_wait(define.cond_recognized_marker_number_three)
         vision.cond_wait(define.cond_recognized_marker_number_four)
         vision.cond_wait(define.cond_recognized_marker_number_five)
-        media.cond_wait(define.cond_sound_recognized_applause_twice)
 
 def vision_recognized_marker_number_one(msg):
 
@@ -976,7 +980,7 @@ def sound_recognized_applause_twice(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Red Heart Examples:
+# Red Heart Examples
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
 # works his bright red LED's and starts blinking them twice. Type and execute/run the program
