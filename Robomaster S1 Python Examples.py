@@ -900,6 +900,7 @@ def start():
 # colours for one second each. You can also turn off the leds, simply by clapping your hands twice.
 # Type and execute/run this program example and see what happens.
 
+media=media_ctrl
 vision=vision_ctrl
 led=led_ctrl
 define=rm_define
@@ -908,7 +909,7 @@ l1,l2=(0,255)
 
 def start():
     
-    media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
+    media.enable_sound_recognition(rm_define.sound_detection_applause)
     vision.enable_detection(define.vision_detection_marker)
     vision.set_marker_detection_distance(1)
 
@@ -929,7 +930,7 @@ def vision_recognized_marker_number_one(msg):
     led.set_bottom_led(define.armor_bottom_all,l2,l1,l1,define.effect_always_on)
     time.sleep(1)
 
-    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+    if media.check_condition(rm_define.cond_sound_recognized_applause_twice):
         led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
         led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
 
@@ -939,7 +940,7 @@ def vision_recognized_marker_number_two(msg):
     led.set_bottom_led(define.armor_bottom_all,l2,l2,l1,define.effect_always_on)
     time.sleep(1)
 
-    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+    if media.check_condition(rm_define.cond_sound_recognized_applause_twice):
         led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
         led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
 
@@ -949,7 +950,7 @@ def vision_recognized_marker_number_three(msg):
     led.set_bottom_led(define.armor_bottom_all,l1,l1,l2,define.effect_always_on)
     time.sleep(1)
 
-    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+    if media.check_condition(rm_define.cond_sound_recognized_applause_twice):
         led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
         led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
 
@@ -959,7 +960,7 @@ def vision_recognized_marker_number_four(msg):
     led.set_bottom_led(define.armor_bottom_all,l1,l2,l1,define.effect_always_on)
     time.sleep(1)
 
-    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+    if media.check_condition(rm_define.cond_sound_recognized_applause_twice):
         led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_off)
         led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
 
@@ -969,7 +970,7 @@ def vision_recognized_marker_number_five(msg):
     led.set_bottom_led(define.armor_bottom_all,l2,l1,l2,define.effect_always_on)
     time.sleep(1)
 
-    if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
+    if media.check_condition(rm_define.cond_sound_recognized_applause_twice):
         led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_off)
         led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
 
