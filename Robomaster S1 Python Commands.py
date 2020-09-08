@@ -304,12 +304,6 @@ vision_ctrl.disable_detection(rm_define.vision_detection_line)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
-media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
-
-media_ctrl.disable_sound_recognition(rm_define.sound_detection_applause)
-
-'''---------------------------------------------------------------------------------------------------------------------------------------------'''
-
 vision_ctrl.set_marker_detection_distance(1)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
@@ -327,14 +321,6 @@ vision_ctrl.line_follow_color_set(rm_define.line_follow_color_blue)
 vision_ctrl.line_follow_color_set(rm_define.line_follow_color_red)
 
 vision_ctrl.line_follow_color_set(rm_define.line_follow_color_green)
-
-'''---------------------------------------------------------------------------------------------------------------------------------------------'''
-
-media_ctrl.exposure_value_update(rm_define.exposure_value_large)
-
-media_ctrl.exposure_value_update(rm_define.exposure_value_medium)
-
-media_ctrl.exposure_value_update(rm_define.exposure_value_small)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
@@ -420,6 +406,22 @@ vision_ctrl.detect_marker_and_aim(rm_define.marker_letter_Z)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
+media_ctrl.enable_sound_recognition(rm_define.sound_detection_applause)
+
+media_ctrl.disable_sound_recognition(rm_define.sound_detection_applause)
+                              
+media_ctrl.cond_wait(rm_define.cond_sound_recognized_applause_twice)
+                              
+media_ctrl.cond_wait(rm_define.cond_sound_recognized_applause_thrice)
+                              
+media_ctrl.exposure_value_update(rm_define.exposure_value_large)
+
+media_ctrl.exposure_value_update(rm_define.exposure_value_medium)
+
+media_ctrl.exposure_value_update(rm_define.exposure_value_small)
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------'''
+                              
 def vision_recognized_people(msg):
     pass
 
