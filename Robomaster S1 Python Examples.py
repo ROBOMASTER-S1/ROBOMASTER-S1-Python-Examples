@@ -987,21 +987,25 @@ def sound_recognized_applause_twice(msg):
 # works his bright red LED's and starts blinking them twice. Type and execute/run the program
 # example below and see what happens.
 
+vision=vision_ctrl
+led=led_ctrl
+define=rm_define
+
 def start():
 
-    led_ctrl.set_top_led(rm_define.armor_top_all,0,0,0,rm_define.effect_always_off)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,0,rm_define.effect_always_off)
+    led.set_top_led(define.armor_top_all,0,0,0,define.effect_always_off)
+    led.set_bottom_led(define.armor_bottom_all,0,0,0,define.effect_always_off)
 
-    vision_ctrl.enable_detection(rm_define.vision_detection_marker)
-    vision_ctrl.set_marker_detection_distance(1)
-    vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
+    vision.enable_detection(define.vision_detection_marker)
+    vision.set_marker_detection_distance(1)
+    vision.cond_wait(define.cond_recognized_marker_trans_red_heart)
         
 def vision_recognized_marker_trans_red_heart(msg):
     
-    led_ctrl.set_flash(rm_define.armor_all,2)
+    led.set_flash(define.armor_all,2)
     
-    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_flash)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_flash)
+    led.set_top_led(define.armor_top_all,255,0,0,define.effect_flash)
+    led.set_bottom_led(define.armor_bottom_all,255,0,0,define.effect_flash)
     
     time.sleep(1)
 
@@ -1011,50 +1015,59 @@ def vision_recognized_marker_trans_red_heart(msg):
 # works his bright cyan LED's and starts to move his chassis forward for one second each time the red
 # heart is shown to him. Type and execute/run the program example below and see what happens.
 
+chassis=chassis_ctrl
+vision=vision_ctrl
+led=led_ctrl
+define=rm_define
+
 def start():
 
-    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
+    led.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
+    led.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
 
-    vision_ctrl.enable_detection(rm_define.vision_detection_marker)
-    vision_ctrl.set_marker_detection_distance(1)
+    vision.enable_detection(rm_define.vision_detection_marker)
+    vision.set_marker_detection_distance(1)
     
     while True:
-        vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
+        vision.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
         
 def vision_recognized_marker_trans_red_heart(msg):
     
-    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
+    led.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
+    led.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     
-    chassis_ctrl.set_wheel_speed(30,30,30,30)
+    chassis.set_wheel_speed(30,30,30,30)
     
     time.sleep(1)
     
-    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
+    led.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
+    led.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
     
-    chassis_ctrl.stop()
+    chassis.stop()
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
 # works his bright red LED's and aims at it.
 
+vision=vision_ctrl
+led=led_ctrl
+define=rm_define
+
 def start():
 
-    led_ctrl.set_top_led(rm_define.armor_top_all,255,255,255,rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,255,rm_define.effect_always_on)
+    led.set_top_led(define.armor_top_all,255,255,255,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,255,255,255,define.effect_always_on)
 
-    vision_ctrl.enable_detection(rm_define.vision_detection_marker)
-    vision_ctrl.set_marker_detection_distance(1)
-    vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
+    vision.enable_detection(define.vision_detection_marker)
+    vision.set_marker_detection_distance(1)
+    vision.cond_wait(define.cond_recognized_marker_trans_red_heart)
     
-    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_always_on)
-    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_always_on)
+    led.set_top_led(define.armor_top_all,255,0,0,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,255,0,0,define.effect_always_on)
     
-    vision_ctrl.detect_marker_and_aim(rm_define.marker_trans_red_heart)
-
+    vision.detect_marker_and_aim(define.marker_trans_red_heart)
+    
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
