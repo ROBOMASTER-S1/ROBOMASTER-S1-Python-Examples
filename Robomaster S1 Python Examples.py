@@ -976,7 +976,7 @@ def sound_recognized_applause_twice(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Red Heart Examples
+# Red Heart Examples:
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
 # works his bright red LED's and starts blinking them twice. Type and execute/run the program
@@ -984,14 +984,12 @@ def sound_recognized_applause_twice(msg):
 
 def start():
 
-    media_ctrl.zoom_value_update(1)
-    
-    while True:
-        led_ctrl.set_top_led(rm_define.armor_top_all,0,0,0,rm_define.effect_always_off)
-        led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,0,rm_define.effect_always_off)
-        
-        vision_ctrl.enable_detection(rm_define.vision_detection_marker)
-        vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,0,0,rm_define.effect_always_off)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,0,0,rm_define.effect_always_off)
+
+    vision_ctrl.enable_detection(rm_define.vision_detection_marker)
+    vision_ctrl.set_marker_detection_distance(1)
+    vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
         
 def vision_recognized_marker_trans_red_heart(msg):
     
@@ -1010,10 +1008,13 @@ def vision_recognized_marker_trans_red_heart(msg):
 
 def start():
 
-    media_ctrl.zoom_value_update(1)
+    led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_off)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_off)
+
+    vision_ctrl.enable_detection(rm_define.vision_detection_marker)
+    vision_ctrl.set_marker_detection_distance(1)
     
     while True:
-        vision_ctrl.enable_detection(rm_define.vision_detection_marker)
         vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
         
 def vision_recognized_marker_trans_red_heart(msg):
@@ -1021,7 +1022,7 @@ def vision_recognized_marker_trans_red_heart(msg):
     led_ctrl.set_top_led(rm_define.armor_top_all,0,255,255,rm_define.effect_always_on)
     led_ctrl.set_bottom_led(rm_define.armor_bottom_all,0,255,255,rm_define.effect_always_on)
     
-    chassis_ctrl.set_wheel_speed(20,20,20,20)
+    chassis_ctrl.set_wheel_speed(30,30,30,30)
     
     time.sleep(1)
     
@@ -1032,22 +1033,22 @@ def vision_recognized_marker_trans_red_heart(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Red heart aim example:
+# Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
+# works his bright red LED's and aims at it.
 
 def start():
+
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,255,255,rm_define.effect_always_on)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,255,rm_define.effect_always_on)
+
+    vision_ctrl.enable_detection(rm_define.vision_detection_marker)
+    vision_ctrl.set_marker_detection_distance(1)
+    vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
     
-    while True:
-        vision_ctrl.enable_detection(rm_define.vision_detection_marker)
-        
-        led_ctrl.set_top_led(rm_define.armor_top_all,255,255,255,rm_define.effect_always_on)
-        led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,255,255,rm_define.effect_always_on)
-        
-        vision_ctrl.cond_wait(rm_define.cond_recognized_marker_trans_red_heart)
-        
-        led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_always_on)
-        led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_always_on)
-        
-        vision_ctrl.detect_marker_and_aim(rm_define.marker_trans_red_heart)
+    led_ctrl.set_top_led(rm_define.armor_top_all,255,0,0,rm_define.effect_always_on)
+    led_ctrl.set_bottom_led(rm_define.armor_bottom_all,255,0,0,rm_define.effect_always_on)
+    
+    vision_ctrl.detect_marker_and_aim(rm_define.marker_trans_red_heart)
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
