@@ -963,7 +963,7 @@ def sound_recognized_applause_twice(msg):
 
 # Make the Robomaster S1 drive all by itself with the help and guidance of vision marker numbers
 # one through five. Simply place all five vision marker numbers where you want the robomaster
-# to drive. Next set the gimbal to rotate with degree like these examples:
+# to drive to. Next set the gimbal to rotate with degree like these examples:
 
 # gimbal.rotate_with_degree(define.gimbal_right,90)
 # gimbal.rotate_with_degree(define.gimbal_left,90)
