@@ -395,11 +395,11 @@ def start():
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
     while True:
-        chassis_ctrl.set_wheel_speed(-20,20,20,-20)
+        chassis_ctrl.set_wheel_speed(-30,30,30,-30)
 
         time.sleep(3)
 
-        chassis_ctrl.set_wheel_speed(20,-20,-20,20)
+        chassis_ctrl.set_wheel_speed(30,-30,-30,30)
 
         time.sleep(3)
 
@@ -412,7 +412,7 @@ def start():
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
     while True:
-        chassis_ctrl.set_trans_speed(0.2)
+        chassis_ctrl.set_trans_speed(0.3)
         chassis_ctrl.move_with_time(90,3)
         chassis_ctrl.move_with_time(-90,3)
 
@@ -470,7 +470,7 @@ def start():
     
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
     
-    chassis_ctrl.set_trans_speed(0.2)
+    chassis_ctrl.set_trans_speed(0.3)
     chassis_ctrl.set_rotate_speed(50)
 
     while True:
@@ -493,10 +493,10 @@ def start():
 
 # Store list variables and values:
 
-    turn_clockwise=[20,-20,20,-20]
-    turn_anticlockwise=[-20,20,-20,20]
-    drive_straight_speed=[20,20,20,20]
-    leds=[0,255];time_delay=[4,8]
+    turn_clockwise=[30,-30,30,-30]
+    turn_anticlockwise=[-30,30,-30,30]
+    drive_straight_speed=[30,30,30,30]
+    leds=0,255;time_delay=4,8
 
 # Set gimbal to follow chassis.
 
@@ -522,7 +522,7 @@ def start():
             rm_define.effect_flash
             )
 
-# Make the chassis turn clockwise at speed 20,-20.
+# Make the chassis turn clockwise at speed 30,-30.
 
         chassis_ctrl.set_wheel_speed(
             turn_clockwise[0],turn_clockwise[1],
@@ -547,7 +547,7 @@ def start():
             rm_define.effect_breath
             )
 
-# Make the chassis drive straight ahead at speed 20,-20.
+# Make the chassis drive straight ahead at speed 30,-30.
 
         chassis_ctrl.set_wheel_speed(
             drive_straight_speed[0],drive_straight_speed[1],
@@ -572,7 +572,7 @@ def start():
             rm_define.effect_flash
             )
 
-# Make the chassis turn anticlockwise at speed 20,-20.
+# Make the chassis turn anticlockwise at speed 30,-30.
 
         chassis_ctrl.set_wheel_speed(
             turn_anticlockwise[0],turn_anticlockwise[1],
@@ -597,7 +597,7 @@ def start():
             rm_define.effect_breath
             )
 
-# Make the chassis drive straight ahead at speed 20,-20.
+# Make the chassis drive straight ahead at speed 30,-30.
 
         chassis_ctrl.set_wheel_speed(
             drive_straight_speed[0],drive_straight_speed[1],
@@ -698,7 +698,7 @@ def start():
     
     robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 
-    chassis_ctrl.set_trans_speed(0.2)
+    chassis_ctrl.set_trans_speed(0.3)
 
     for i in range(2):
         chassis_ctrl.move(-45)
@@ -721,7 +721,7 @@ def start():
 
 # Make Robomaster drive in a square using a for-loop.
 
-drive_speed=(0.2)
+drive_speed=0.3
 wheel_degree=(90,180,-90,0)
 seconds=2
 
@@ -737,8 +737,8 @@ def start():
 
 # Make Robomaster drive in an X shape using a for-loop.
 
-drive_speed=(0.2)
-wheel_degree=(90,-135,90,-45)
+drive_speed=0.3
+wheel_degree=90,-135,90,-45
 seconds=2
 
 def start():
@@ -835,8 +835,8 @@ def start():
 
 def start():
 
-    led1,led2=(0,255)
-    blink_rate=(6,8)
+    led1,led2=0,255
+    blink_rate=6,8
 
 # Blaster fire example function:
 
@@ -905,7 +905,7 @@ vision=vision_ctrl
 led=led_ctrl
 define=rm_define
 
-l1,l2=(0,255)
+l1,l2=0,255
 
 def start():
 
@@ -958,6 +958,121 @@ def sound_recognized_applause_twice(msg):
 
     led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
     led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
+
+'''----------------------------------------------------------------------------------------------------------------------------------------------------'''
+
+# Make the Robomaster S1 drive all by itself with the help and guidance of vision marker numbers
+# one through five. Simply place all five vision marker numbers where you want the robomaster
+# to drive. Next set the gimbal to rotate with degree like these examples:
+
+# gimbal.rotate_with_degree(define.gimbal_right,90)
+# gimbal.rotate_with_degree(define.gimbal_left,90)
+
+# Make sure you face the robomaster S1 about a meter away, directly at the very first vision marker
+# you want it to start to drive to. For example this program defaults to vision marker_number_one
+# followed by vision marker_number_two and so on. If you want the robot to drive at a much farther
+# distance away from the vision markers, make sure it's lined right up with the first vision marker
+# straight away. Also, make sure you have lots of light around in the play area so the robot can
+# see the vision markers through its infrared sensors.
+
+# Note: the top leds and bottom leds change different colours to show that the vision makers
+# are working properly. The robot will drive for 2 seconds beyond after the leds change colour.
+# This way, you can make the robomaster S1 drive as close to the vision markers as possible,
+# while at the same time, the leds become a great indicator that the vision markers work
+# properly; if the vision markers don't work, the leds won't change different colours.
+# This also gives you enough time to stop the program entirely.
+
+# To avoid damaging your Robomaster S1, never set any speeds higher than they are shown here,
+# especially in smaller play areas. Note: be cautious when setting the drive_speed variable higher
+# than 0.3 and the seconds variable, who's default is 2 seconds per drive time distance beyond.
+
+# IMPORTANT! Never pick up or move the Robomaster S1, while its program is
+# running. Doing so may cause damage to the unit; you must stop the program first.
+
+gimbal=gimbal_ctrl
+chassis=chassis_ctrl
+media=media_ctrl
+vision=vision_ctrl
+robot=robot_ctrl
+led=led_ctrl
+define=rm_define
+
+drive_speed=0.3
+gimbal_speed=100
+gimbal_rotate=90,180
+l1,l2=0,255
+seconds=2
+
+def start():
+
+    vision.set_marker_detection_distance(1)
+    vision.enable_detection(define.vision_detection_marker)
+
+    robot.set_mode(define.robot_mode_chassis_follow)
+
+    gimbal.set_rotate_speed(gimbal_speed)
+    chassis.set_trans_speed(drive_speed)
+
+    led.set_top_led(define.armor_top_all,l2,l2,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l2,l2,define.effect_always_on)
+    chassis.move(0)
+
+    while True:
+        vision.cond_wait(define.cond_recognized_marker_number_one)
+        vision.cond_wait(define.cond_recognized_marker_number_two)
+        vision.cond_wait(define.cond_recognized_marker_number_three)
+        vision.cond_wait(define.cond_recognized_marker_number_four)
+        vision.cond_wait(define.cond_recognized_marker_number_five)
+        break
+
+def vision_recognized_marker_number_one(msg):
+
+    led.set_top_led(define.armor_top_all,l2,l1,l1,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l1,l1,define.effect_always_on)
+    time.sleep(seconds)
+    chassis.stop()
+
+    gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[0])
+    chassis.move(0)
+
+def vision_recognized_marker_number_two(msg):
+
+    led.set_top_led(define.armor_top_all,l2,l2,l1,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l2,l1,define.effect_always_on)
+    time.sleep(seconds)
+    chassis.stop()
+
+    gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[0])
+    chassis.move(0)
+
+def vision_recognized_marker_number_three(msg):
+
+    led.set_top_led(define.armor_top_all,l1,l1,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l1,l1,l2,define.effect_always_on)
+    time.sleep(seconds)
+    chassis.stop()
+
+    gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[0])
+    chassis.move(0)
+
+def vision_recognized_marker_number_four(msg):
+
+    led.set_top_led(define.armor_top_all,l1,l2,l1,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l1,l2,l1,define.effect_always_on)
+    time.sleep(seconds)
+    chassis.stop()
+
+    gimbal.rotate_with_degree(define.gimbal_left,gimbal_rotate[0])
+    chassis.move(0)
+
+def vision_recognized_marker_number_five(msg):
+
+    led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l1,l2,define.effect_always_on)
+    time.sleep(seconds)
+    chassis.stop()
+
+    gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[1])
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
