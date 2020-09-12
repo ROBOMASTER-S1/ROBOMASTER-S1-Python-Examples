@@ -911,7 +911,7 @@ def start():
 
     vision.set_marker_detection_distance(1)    
     vision.enable_detection(define.vision_detection_marker)
-    media.enable_sound_recognition(rm_define.sound_detection_applause)
+    media.enable_sound_recognition(define.sound_detection_applause)
 
     led.set_top_led(define.armor_top_all,l1,l1,l1,define.effect_always_off)
     led.set_bottom_led(define.armor_bottom_all,l1,l1,l1,define.effect_always_off)
