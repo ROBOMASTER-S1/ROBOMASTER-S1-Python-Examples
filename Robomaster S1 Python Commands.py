@@ -156,9 +156,11 @@ chassis_ctrl.rotate(rm_define.anticlockwise)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
-chassis_ctrl.rotate_with_time(rm_define.clockwise,1)
+chassis_ctrl.rotate_with_time(rm_define.clockwise,0)
 
-chassis_ctrl.rotate_with_time(rm_define.anticlockwise,1chassis_ctrl.rotate_with_degree(rm_define.clockwise,0)
+chassis_ctrl.rotate_with_time(rm_define.anticlockwise,0)
+
+chassis_ctrl.rotate_with_degree(rm_define.clockwise,0)
 
 chassis_ctrl.rotate_with_degree(rm_define.anticlockwise,0)
 
@@ -170,9 +172,9 @@ chassis_ctrl.rotate_with_speed(rm_define.anticlockwise,30)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
-chassis_ctrl.move_and_rotate(0, rm_define.clockwise)
+chassis_ctrl.move_and_rotate(0,rm_define.clockwise)
 
-chassis_ctrl.move_and_rotate(0, rm_define.anticlockwise)
+chassis_ctrl.move_and_rotate(0,rm_define.anticlockwise)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
