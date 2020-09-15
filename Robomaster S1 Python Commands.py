@@ -759,9 +759,9 @@ if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_thrice) :
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
- vision_ctrl.cond_wait(rm_define.cond_recognized_people)
+vision_ctrl.cond_wait(rm_define.cond_recognized_people)
 
- vision_ctrl.cond_wait(rm_define.cond_recognized_car)
+vision_ctrl.cond_wait(rm_define.cond_recognized_car)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
