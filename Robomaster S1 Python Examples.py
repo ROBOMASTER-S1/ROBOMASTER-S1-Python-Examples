@@ -1004,8 +1004,8 @@ seconds=2
 
 def start():
 
-    vision.set_marker_detection_distance(1)
     vision.enable_detection(define.vision_detection_marker)
+    vision.set_marker_detection_distance(1)
 
     robot.set_mode(define.robot_mode_chassis_follow)
 
