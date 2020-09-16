@@ -1057,6 +1057,43 @@ media_ctrl.record(0)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
+# Create some strings to shorten some of the long Robomaster S1 commands, such as those
+# long led commands. Note: only these strings below can be used to shorten most Robomaster
+# S1 commands. Also give these strings similar names to the ones used for parts of Robomaster
+# S1's commands.
+
+# Example:
+
+# led_ctrl.set_bottom_led(rm_define.armor_bottom_right,255,0,0,rm_define.effect_always_on)
+
+# led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
+
+robot=robot_ctrl
+
+gimbal=gimbal_ctrl
+
+chassis=chassis_ctrl
+
+blaster=ir_blaster_ctrl
+
+gun=gun_ctrl
+
+led=led_ctrl
+
+armor=armor_ctrl
+
+vision=vision_ctrl
+
+media=media_ctrl
+
+distance=ir_distance_sensor_ctrl
+
+sensor=sensor_adapter_ctrl
+
+define=rm_define
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------'''
+
 # Basic time.sleep() function
 
 time.sleep(1)
