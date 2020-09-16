@@ -1075,6 +1075,86 @@ def vision_recognized_marker_number_five(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
+# below is the very same program example as the one above, the only difference is there are 'if'
+# statements instead of 'def' statements and the 'vision.cond_wait()' commands are no longer present,
+# only the 'vision.check_condition()' commands are used in this program example. Type and execute/run
+# this program example and see what happens.
+
+robot=robot_ctrl
+gimbal=gimbal_ctrl
+chassis=chassis_ctrl
+vision=vision_ctrl
+led=led_ctrl
+define=rm_define
+
+drive_speed=0.3
+gimbal_speed=30
+gimbal_rotate=90,180
+l1,l2=0,255
+seconds=2
+
+def start():
+    
+    vision.enable_detection(define.vision_detection_marker)
+    vision.set_marker_detection_distance(1)
+    
+    robot_ctrl.set_mode(rm_define.robot_mode_chassis_follow)
+
+    gimbal.set_rotate_speed(gimbal_speed)
+    chassis.set_trans_speed(drive_speed)
+    
+    led.set_top_led(define.armor_top_all,l2,l2,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l2,l2,define.effect_always_on)
+    chassis.move(0)
+
+    while True:                
+        if vision.check_condition(define.cond_recognized_marker_number_one):
+            led.set_top_led(define.armor_top_all,l2,l1,l1,define.effect_always_on)
+            led.set_bottom_led(define.armor_bottom_all,l2,l1,l1,define.effect_always_on)
+            time.sleep(seconds)
+            chassis.stop()
+
+            gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[0])
+            chassis.move(0)
+
+        if vision.check_condition(define.cond_recognized_marker_number_two):
+            led.set_top_led(define.armor_top_all,l2,l2,l1,define.effect_always_on)
+            led.set_bottom_led(define.armor_bottom_all,l2,l2,l1,define.effect_always_on)
+            time.sleep(seconds)
+            chassis.stop()
+
+            gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[0])
+            chassis.move(0)
+
+        if vision.check_condition(define.cond_recognized_marker_number_three):
+            led.set_top_led(define.armor_top_all,l1,l1,l2,define.effect_always_on)
+            led.set_bottom_led(define.armor_bottom_all,l1,l1,l2,define.effect_always_on)
+            time.sleep(seconds)
+            chassis.stop()
+
+            gimbal.rotate_with_degree(define.gimbal_right,gimbal_rotate[0])
+            chassis.move(0)
+
+        if vision.check_condition(define.cond_recognized_marker_number_four):
+            led.set_top_led(define.armor_top_all,l1,l2,l1,define.effect_always_on)
+            led.set_bottom_led(define.armor_bottom_all,l1,l2,l1,define.effect_always_on)
+            time.sleep(seconds)
+            chassis.stop()
+
+            gimbal.rotate_with_degree(define.gimbal_left,gimbal_rotate[0])
+            chassis.move(0)
+
+        if vision.check_condition(define.cond_recognized_marker_number_five):
+            led.set_top_led(define.armor_top_all,l2,l1,l2,define.effect_always_on)
+            led.set_bottom_led(define.armor_bottom_all,l2,l1,l2,define.effect_always_on)
+            time.sleep(seconds)            
+            chassis.stop()
+
+            gimbal.rotate_with_degree(define.gimbal_left,gimbal_rotate[1])
+            break
+
+'''----------------------------------------------------------------------------------------------------------------------------------------------------'''
+
 # Red Heart Examples
 
 # Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
