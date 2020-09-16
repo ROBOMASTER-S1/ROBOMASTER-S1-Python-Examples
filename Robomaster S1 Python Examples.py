@@ -989,16 +989,15 @@ def sound_recognized_applause_twice(msg):
 # IMPORTANT! Never pick up or move the Robomaster S1, while its program is
 # running. Doing so may cause damage to the unit; you must stop the program first.
 
+robot=robot_ctrl
 gimbal=gimbal_ctrl
 chassis=chassis_ctrl
-media=media_ctrl
 vision=vision_ctrl
-robot=robot_ctrl
 led=led_ctrl
 define=rm_define
 
 drive_speed=0.3
-gimbal_speed=100
+gimbal_speed=30
 gimbal_rotate=90,180
 l1,l2=0,255
 seconds=2
