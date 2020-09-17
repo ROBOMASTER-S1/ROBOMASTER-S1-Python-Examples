@@ -751,10 +751,10 @@ if vision_ctrl.check_condition(rm_define.cond_recognized_pose_capture):
                               
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
                               
-if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice) :
+if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_twice):
         pass
 
-if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_thrice) :
+if media_ctrl.check_condition(rm_define.cond_sound_recognized_applause_thrice):
         pass
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
