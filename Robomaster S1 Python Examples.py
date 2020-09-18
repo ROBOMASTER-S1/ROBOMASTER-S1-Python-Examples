@@ -1078,7 +1078,7 @@ def vision_recognized_marker_number_five(msg):
 # below is the very same program example as the one above, the only difference is there are 'if'
 # statements instead of 'def' statements and the 'vision.cond_wait()' commands are no longer present,
 # only the 'vision.check_condition()' commands are used in this program example. Type and execute/run
-# this program example and see what happens.
+# the program example and see what happens.
 
 robot=robot_ctrl
 gimbal=gimbal_ctrl
@@ -1242,6 +1242,70 @@ def start():
     
     vision.detect_marker_and_aim(define.marker_trans_red_heart)
     
+'''----------------------------------------------------------------------------------------------------------------------------------------------------'''
+
+# Make Robomaster become a Clap Lamp. Simply clap your hands twice to turn his leds on.
+# Clap your hands three times to turn his leds off. Type and execute/run the program example
+# below and see what happens.
+
+media=media_ctrl
+led=led_ctrl
+define=rm_define
+
+l1,l2=0,255
+seconds=1
+
+def start():
+
+    media.enable_sound_recognition(rm_define.sound_detection_applause)
+    led.turn_off(define.armor_all)
+
+    while True:
+        media.cond_wait(define.cond_sound_recognized_applause_twice)
+        media.cond_wait(define.cond_sound_recognized_applause_thrice)
+
+def sound_recognized_applause_twice(msg):
+    led.set_top_led(define.armor_top_all,l2,l2,l2,define.effect_always_on)
+    led.set_bottom_led(define.armor_bottom_all,l2,l2,l2,define.effect_always_on)
+
+def sound_recognized_applause_thrice(msg):
+    led.turn_off(define.armor_all)
+    
+'''----------------------------------------------------------------------------------------------------------------------------------------------------'''
+
+# below is the very same program example as the one above, the only difference is there are 'if'
+# statements instead of 'def' statements and the ' media.cond_wait()' commands are no longer present,
+# only the 'media.check_condition()' commands are used in this program example. Type and execute/run
+# the program example and see what happens.
+
+media=media_ctrl
+led=led_ctrl
+define=rm_define
+
+l1,l2=0,255
+seconds=1
+
+def start():
+
+    def on():
+        
+        led.set_top_led(define.armor_top_all,l2,l2,l2,define.effect_always_on)
+        led.set_bottom_led(define.armor_bottom_all,l2,l2,l2,define.effect_always_on)
+        
+    def off():
+
+        led.turn_off(define.armor_all)        
+
+    media.enable_sound_recognition(define.sound_detection_applause)
+    led.turn_off(define.armor_all)
+
+    while True:        
+        if media.check_condition(define.cond_sound_recognized_applause_twice):
+            on()
+
+        if media.check_condition(define.cond_sound_recognized_applause_thrice):
+            off()
+
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
 # More future Robomaster s1 Python examples still to come as I learn more and more, each and every day.
