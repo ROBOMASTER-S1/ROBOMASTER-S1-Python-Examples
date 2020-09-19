@@ -233,7 +233,7 @@ def start():
 
 # Chassis Examples
 
-# Turn on the Robomaster's gun light and make the LED's pulsate, while the chassis rocks back and
+# Turn on Robomaster's gun light and make the LED's pulsate, while the chassis rocks back and
 # forth. Type and execute/run this program example below and see what happens.
 
 def start():
@@ -278,7 +278,7 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Turn on the Robomaster's gun light and make the LED's pulsate, while rotating clockwise and anti
+# Turn on Robomaster's gun light and make the LED's pulsate, while rotating clockwise and anti
 # clockwise. Type and execute/run the program example below and see what happens.
 
 def start():
@@ -356,7 +356,7 @@ def start():
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make the Robomaster drive non-stop while making all the LED's flash-rotate two, different colours.
+# Make Robomaster drive non-stop while making all the LED's flash-rotate two, different colours.
 # Type and execute/run the program example below and see what happens.
 
 def start():
@@ -895,10 +895,10 @@ def start():
             
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make the Robomaster S1's leds change different colours whenever you show him the vision markers from
-# one through five. You can combine different vision markers to make Robomaster S1's leds change differnt
-# colours for one second each. You can also turn off the leds, simply by clapping your hands twice.
-# Type and execute/run this program example and see what happens.
+# Make Robomaster's leds change different colours whenever you show him the vision markers from one
+# through five. You can combine different vision markers to make Robomaster S1's leds change differnt
+# colours for one second each. You can also turn off the leds, simply by clapping your hands twice. Type
+# and execute/run this program example and see what happens.
 
 media=media_ctrl
 vision=vision_ctrl
@@ -961,7 +961,7 @@ def sound_recognized_applause_twice(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make the Robomaster S1 drive all by itself with the help and guidance of vision marker numbers
+# Make Robomaster drive all by itself with the help and guidance of vision marker numbers
 # one through five. Simply place all five vision marker numbers where you want the robomaster
 # to drive to. Next set the gimbal to rotate with degree like these examples:
 
@@ -1157,7 +1157,7 @@ def start():
 
 # Red Heart Examples
 
-# Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
+# Make Robomaster recognize the red heart and make him wait for it to be recognized before he
 # works his bright red LED's and starts blinking them twice. Type and execute/run the program
 # example below and see what happens.
 
@@ -1185,7 +1185,7 @@ def vision_recognized_marker_trans_red_heart(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
+# Make Robomaster recognize the red heart and make him wait for it to be recognized before he
 # works his bright cyan LED's and starts to move his chassis forward for one second each time the red
 # heart is shown to him. Type and execute/run the program example below and see what happens.
 
@@ -1221,7 +1221,7 @@ def vision_recognized_marker_trans_red_heart(msg):
 
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make the Robomaster recognize the red heart and make him wait for it to be recognized before he
+# Make Robomaster recognize the red heart and make him wait for it to be recognized before he
 # works his bright red LED's and aims at it.
 
 vision=vision_ctrl
