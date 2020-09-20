@@ -689,7 +689,7 @@ def start():
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
 # Drive the chassis at -45, 45 and 135, -135 degrees. Create a for-loop to repeat the sequence two times.
-# Set the chassis translation speed to (0.2) Use a time.sleep(1) delay to allow the chassis to move for
+# Set the chassis translation speed to (0.3) Use a time.sleep(1) delay to allow the chassis to move for
 # one second on each degee turn.
 
 # Type and execute/run the program example below and see what happens.
