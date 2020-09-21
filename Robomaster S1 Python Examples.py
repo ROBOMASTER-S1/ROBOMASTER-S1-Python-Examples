@@ -1253,7 +1253,6 @@ led=led_ctrl
 define=rm_define
 
 l1,l2=0,255
-seconds=1
 
 def start():
 
@@ -1283,7 +1282,6 @@ led=led_ctrl
 define=rm_define
 
 l1,l2=0,255
-seconds=1
 
 def start():
 
@@ -1317,7 +1315,6 @@ led=led_ctrl
 define=rm_define
 
 l1,l2=0,255
-seconds=1
 
 def start():
 
@@ -1387,7 +1384,6 @@ led=led_ctrl
 define=rm_define
 
 l1,l2=0,255
-seconds=1
 
 def start():
 
