@@ -1421,7 +1421,7 @@ def sound_recognized_applause_thrice(msg):
     
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make Robomaster become a Rave Lamp. Simply clap your hands twice every time to change
+# Make Robomaster become a Rave Clap Lamp. Simply clap your hands twice every time to change
 # his two flashing led colours into your two favorite flashing led colours. Clap your hands three
 # times to turn his leds off. Type and execute/run the program example below and see what happens.
 
