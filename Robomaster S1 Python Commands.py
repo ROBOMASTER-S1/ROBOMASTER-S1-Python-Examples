@@ -871,6 +871,34 @@ armor_ctrl.set_hit_sensitivity(5)
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
+if armor_ctrl.check_condition(rm_define.cond_armor_hit):
+  pass
+
+if armor_ctrl.check_condition(rm_define.cond_armor_bottom_front_hit):
+  pass
+
+if armor_ctrl.check_condition(rm_define.cond_armor_bottom_back_hit):
+  pass
+
+if armor_ctrl.check_condition(rm_define.cond_armor_bottom_left_hit):
+  pass
+
+if armor_ctrl.check_condition(rm_define.cond_armor_bottom_right_hit):
+  pass
+
+if armor_ctrl.check_condition(rm_define.cond_armor_top_left_hit):
+  pass
+
+if armor_ctrl.check_condition(rm_define.cond_armor_top_right_hit):
+  pass
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------'''
+
+if armor_ctrl.check_condition(rm_define.cond_ir_hit_detection):
+  pass
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------'''
+
 def armor_hit_detection_all(msg):
     pass
 
@@ -896,6 +924,13 @@ def armor_hit_detection_top_right(msg):
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
+def ir_hit_detection_event(msg):
+    pass
+
+'''---------------------------------------------------------------------------------------------------------------------------------------------'''
+
+armor_ctrl.cond_wait(rm_define.cond_armor_hit)
+
 armor_ctrl.cond_wait(rm_define.cond_armor_bottom_front_hit)
 
 armor_ctrl.cond_wait(rm_define.cond_armor_bottom_back_hit)
@@ -909,11 +944,6 @@ armor_ctrl.cond_wait(rm_define.cond_armor_bottom_right_hit)
 armor_ctrl.cond_wait(rm_define.cond_armor_top_left_hit)
 
 armor_ctrl.cond_wait(rm_define.cond_armor_top_right_hit)
-
-'''---------------------------------------------------------------------------------------------------------------------------------------------'''
-
-def ir_hit_detection_event(msg):
-    pass
 
 '''---------------------------------------------------------------------------------------------------------------------------------------------'''
 
