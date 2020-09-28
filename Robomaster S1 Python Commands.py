@@ -886,6 +886,8 @@ if armor_ctrl.check_condition(rm_define.cond_armor_bottom_left_hit):
 if armor_ctrl.check_condition(rm_define.cond_armor_bottom_right_hit):
   pass
 
+'''---------------------------------------------------------------------------------------------------------------------------------------------'''
+
 if armor_ctrl.check_condition(rm_define.cond_armor_top_left_hit):
   pass
 
