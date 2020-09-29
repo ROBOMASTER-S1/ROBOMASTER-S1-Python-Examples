@@ -1421,7 +1421,7 @@ def sound_recognized_applause_thrice(msg):
     
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Make Robomaster become a Rave Lamp. Simply clap your hands twice every time to change
+# Make Robomaster become a Rave Clap Lamp. Simply clap your hands twice every time to change
 # his two flashing led colours into your two favorite flashing led colours. Clap your hands three
 # times to turn his leds off. Type and execute/run the program example below and see what happens.
 
@@ -1616,7 +1616,7 @@ def armor_hit_detection_bottom_left(msg):
     
 '''----------------------------------------------------------------------------------------------------------------------------------------------------'''
 
-# Here is the very same program example below as the one above. The only difference is there are
+# below is the very same program example as the one above. The only difference is there are
 # no 'def' functions or armor wait commands.
 
 armor=armor_ctrl
