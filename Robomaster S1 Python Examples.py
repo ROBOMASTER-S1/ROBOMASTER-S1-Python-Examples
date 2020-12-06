@@ -1257,6 +1257,7 @@ l1,l2=0,255
 def start():
 
     media.enable_sound_recognition(rm_define.sound_detection_applause)
+    
     led.turn_off(define.armor_all)
 
     while True:
