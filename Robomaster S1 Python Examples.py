@@ -1261,7 +1261,6 @@ def start():
 
     while True:
         media.cond_wait(define.cond_sound_recognized_applause_twice)
-        media.cond_wait(define.cond_sound_recognized_applause_thrice)
 
 def sound_recognized_applause_twice(msg):
     led.set_top_led(define.armor_top_all,l2,l2,l2,define.effect_always_on)
