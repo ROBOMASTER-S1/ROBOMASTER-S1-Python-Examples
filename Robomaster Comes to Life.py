@@ -50,7 +50,7 @@ led=led_ctrl
 define=rm_define
 
 rotate_speed=(20,30,40,50,60)
-scan_speed=(40);drive_speed=(.1)
+scan_speed=(40);drive_speed=(.2)
 wheel_degree=(0,180,90,-90,45,-45,135,-135)
 led1,led2=(0,255);blink_rate=(2,3,4,5,6)
 seconds=1
