@@ -495,23 +495,18 @@ def start():
 
         elif randfunc==2:                
             gimbal_free_mode()
-            continue
 
         elif randfunc==3:                
             chassis_free_mode()
-            continue
 
         elif randfunc==4:                
             blaster_fire()
-            continue
 
         elif randfunc==5:                
             sleep_mode()
-            continue
 
         if randscan==15:                
             scan_search()
-            continue
 
 def sound_recognized_applause_twice(msg):
 
