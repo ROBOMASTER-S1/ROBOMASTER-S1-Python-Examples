@@ -32,7 +32,7 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # again gets incremented and the whole process starts all over again, until
 # each outer for-loop reaches their last increments; their final, proverbial end.
 
-# The while-loop simply makes this function called "rybg_colour_chasers()"
+# The while-loop simply makes this function called "rgb_colour_chasers()"
 # execute/run the whole program twice. You can increase while-loop value to
 # any number you like. You can simply make the while-loop run forever, none-stop.
 # The while-loop will make the for-loops run forever. Sometimes you need a while-
@@ -61,7 +61,7 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # instead the program just does nothing for the duration of the loop iterations.
 
 # Create a while-loop to repeat the outer for-loops and the nested for-loops two times,
-# using the function called "rybg_colour_chasers()".
+# using the function called "rgb_colour_chasers()".
 
 led=led_ctrl
 define=rm_define
@@ -84,7 +84,7 @@ def start():
     led.turn_off(define.armor_all)
     time.sleep(delay2)
 
-    def rybg_colour_chasers():
+    def rgb_colour_chasers():
         for x in range(1,3):
             for i in range(1,9):
                 led.set_top_led(define.armor_top_all,
@@ -149,7 +149,7 @@ def start():
                 time.sleep(delay1)
     x=0
     while x<2:
-        rybg_colour_chasers()
+        rgb_colour_chasers()
         x+=1 # is also x=x+1 if you like.
 
     led.turn_off(define.armor_all)
