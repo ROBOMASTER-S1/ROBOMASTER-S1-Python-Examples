@@ -6,7 +6,17 @@
 # such as those long led commands. Give these strings similar names to the ones used
 # for parts of Robomaster S1's Python commands. For example:
 '''
+robot=robot_ctrl
+gimbal=gimbal_ctrl
+chassis=chassis_ctrl
+blaster=ir_blaster_ctrl
+gun=gun_ctrl
 led=led_ctrl
+armor=armor_ctrl
+vision=vision_ctrl
+media=media_ctrl
+distance=ir_distance_sensor_ctrl
+sensor=sensor_adapter_ctrl
 define=rm_define
 
 led_ctrl.set_bottom_led(rm_define.armor_bottom_right,255,0,0,rm_define.effect_always_on)
