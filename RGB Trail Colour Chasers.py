@@ -43,7 +43,7 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # higher than the iterations you give it, an 'Index Out of Range Error' will occur.
 
 # Run this Robomaster S1 Python program and you will have a much better
-# understanding of for-loops and while-loops and how they play a vital role in
+# understanding of for-loops and while-loops and how they play a vital role
 # in computer programming. For-loops and while-loops also reduce redundant
 # code, via the programmer's part.
 
