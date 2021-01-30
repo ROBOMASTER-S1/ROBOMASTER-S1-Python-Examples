@@ -37,10 +37,10 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # The while-loop will make the for-loops run forever. Sometimes you need a while-
 # loop to make for-loops start at the beginning again, so you can make the for-loop
 # indexes repeat themselves, when they terminate. Sometimes you need for-loops
-# to start all over again, but without while-loops, that's not always possible to achieve.
-# For-loops have only whatever iterations you give them. But, once they terminate,
-# they stop running completely. If you try and make the for-loop count higher than
-# the iterations you give it, an 'Index Out of Range Error' will occur.
+# to start all over again, but without while-loops, that's not always possible to
+# achieve. For-loops have only whatever iterations you give them. But, once they
+# terminate, they stop running completely. If you try and make the for-loop count
+# higher than the iterations you give it, an 'Index Out of Range Error' will occur.
 
 # Run this Robomaster S1 Python program and you will have a much better
 # understanding of for-loops and while-loops and how they play a vital role in
