@@ -57,7 +57,7 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # include the start value, the end value and the step value, -1. Always use negative
 # integers in the step value to cause the for-loop to reverse looping. If you don't set
 # the step value to a negative integer, the for-loop still runs, but nothing happens.
-# instead the program just does nothing for the duration of the loop iterations.
+# Instead the program just does nothing for the duration of the loop iterations.
 
 # Create a while-loop to repeat the outer for-loop and the two nested for-loops two
 # times, using the function called "rgb_colour_trail_chasers()".
