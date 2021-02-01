@@ -25,12 +25,12 @@ led_ctrl.set_bottom_led(rm_define.armor_bottom_right,255,0,0,rm_define.effect_al
 led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 '''
 # This Robomaster S1 Python program example causes the gimbal leds to colour
-# chase, while they change in four RGB colour codes every time each outer for-loop
-# increments by one whole cycle through after it allows each nested for-loop to loop
-# through their individual cycles through. After each nested loop does what they have
-# to do, each outer for-loop, once again gets incremented and the whole process starts
-# all over again, until each outer for-loop reaches their last increments; their final,
-# proverbial end.
+# chase, while they change in four RGB colour codes every time each outer
+# for-loop increments by one whole cycle through after it allows each nested
+# for-loop to loop through their individual cycles through. After each nested
+# loop does what they have to do, each outer for-loop, once again gets incremented
+# and the whole process starts all over again, until each outer for-loop reaches
+# their last increments; their final, proverbial end.
 
 # The while-loop simply makes this function called "rgb_colour_chasers()"
 # execute/run the whole program twice. You can increase while-loop value to
@@ -54,8 +54,8 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # add this empty list box [] at position 0, since the leds on the gimbal and the
 # chassis start at 1 through 8 and 1 through 4. Note: no gimbal or chassis leds
 # start at 0. If you want the gimbal leds to rotate backwards, simply create a
-# reverse for-loop like this illustration shows: 'for i in range(8,0,-1):'. You
-# must include the start value, the end value and the step value, -1. Always use
+# reverse for-loop like this illustration shows: 'for i in range(8,0,-1):'. You must
+# include the start value, the end value and the step value, -1. Always use
 # negative integers in the step value to cause the for-loop to reverse looping.
 # If you don't set the step value to a negative integer, the for-loop still runs,
 # but nothing happens. Instead the program just does nothing for the duration of
@@ -147,6 +147,9 @@ def start():
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
                 led.set_single_led(define.armor_top_all,
                 [i,i+2,i+4,i+6],define.effect_always_on)
+
+                led.set_bottom_led(define.armor_bottom_all,
+                RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay1)
     x=0
     while x<2:
