@@ -86,7 +86,7 @@ def start():
     time.sleep(delay2)
 
     def rgb_colour_chasers():
-        for x in range(1,3):
+        for x in range(0,2):
             for i in range(1,9):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -97,7 +97,7 @@ def start():
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay1)
 
-        for x in range(1,4):
+        for x in range(0,3):
             for i in range(1,5):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -108,7 +108,7 @@ def start():
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay1)
 
-        for x in range(1,8):
+        for x in range(0,7):
             for i in range(1,3):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -119,7 +119,7 @@ def start():
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay1)
 
-        for x in range(1,4):
+        for x in range(0,3):
             for i in range(4,0,-1):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -130,7 +130,7 @@ def start():
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay1)
 
-        for x in range(1,3):
+        for x in range(0,2):
             for i in range(8,0,-1):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -141,7 +141,7 @@ def start():
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay1)
 
-        for x in range(1,8):
+        for x in range(0,7):
             for i in range(2,0,-1):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
