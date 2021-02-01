@@ -61,8 +61,8 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # but nothing happens. Instead the program just does nothing for the duration of
 # the loop iterations.
 
-# Create a while-loop to repeat the outer for-loops and the nested for-loops two times,
-# using the function called "rgb_colour_chasers()".
+# Create a while-loop to repeat the outer for-loops and the nested for-loops two
+# times, using the function called "rgb_colour_chasers()".
 
 led=led_ctrl
 define=rm_define
