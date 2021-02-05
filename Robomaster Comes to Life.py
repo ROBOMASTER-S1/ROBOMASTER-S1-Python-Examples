@@ -492,6 +492,9 @@ def start():
 
         if randscan==15:
             scan_search()
+            
+# Note: you can delete this entire function code block below if you like; the program will
+# run just fine without it.
 
 def sound_recognized_applause_twice(msg):
     
