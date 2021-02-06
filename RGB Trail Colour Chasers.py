@@ -91,12 +91,12 @@ def start():
             RGB[i][0],RGB[i][1],RGB[i][2],define.effect_flash)
 
             for i in range(1,9):
-                led_ctrl.set_single_led(define.armor_top_all,
+                led.set_single_led(define.armor_top_all,
                 [i],define.effect_always_on)
                 time.sleep(delay1)
             
             for i in range(1,9):
-                led_ctrl.set_single_led(define.armor_top_all,
+                led.set_single_led(define.armor_top_all,
                 [i],define.effect_always_off)
                 time.sleep(delay1)            
     x=0
