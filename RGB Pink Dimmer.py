@@ -30,13 +30,13 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 # rather than creating a list with indexes that might not be useful in some cases.
 # For example:
 
-# x1,x2,x3,x4,x5,x6 = 0,255,-1,.001,1,2
+# x1,x2,x3,x4,x5 = 0,255,-1,1,2
 
 # Let's have some fun and unpack these strings into variables instead of the actual
 # integer numbers themselves.
 
-# For example: 'x1,x2,x3,x4,x5,x6' are called variables and the actual integer numbers
-# '0,255,-1,.001,1,2' are called values, which the variables hold integer numbers, or
+# For example: 'x1,x2,x3,x4,x5' are called variables and the actual integer numbers
+# '0,255,-1,1,2' are called values, which the variables hold integer numbers, or
 # text as well; not shown here.
 
 # Create a while-loop to repeat the two for-loops twice, using the function called
@@ -44,11 +44,11 @@ led.set_bottom_led(define.armor_bottom_right,255,0,0,define.effect_always_on)
 
 led=led_ctrl
 define=rm_define
-x1,x2,x3,x4,x5,x6=0,255,-1,.001,1,2
+x1,x2,x3,x4,x5=0,255,-1,1,2
 
 def start():
     led.turn_off(define.armor_all)
-    time.sleep(x5)
+    time.sleep(x4)
 
     def rgb_pink_dimmer():        
         for i in range(x1,x2):
@@ -57,7 +57,6 @@ def start():
 
             led.set_bottom_led(define.armor_bottom_all,
             i,x1,i,define.effect_always_on) # Pink
-            time.sleep(x4)
 
         for i in range(x2,x1,x3):
             led.set_top_led(define.armor_top_all,
@@ -65,11 +64,10 @@ def start():
 
             led.set_bottom_led(define.armor_bottom_all,
             i,x1,i,define.effect_always_on) # Pink
-            time.sleep(x4)
     x=x1
-    while x<x6:
+    while x<x5:
         rgb_pink_dimmer()
-        x+=x5 # is also x=x+x5 if you like.
+        x+=x4 # is also x=x+x4 if you like.
 
     led.turn_off(define.armor_all)
-    time.sleep(x5)
+    time.sleep(x4)
