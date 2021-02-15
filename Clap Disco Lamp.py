@@ -7,8 +7,8 @@
 led=led_ctrl
 media=media_ctrl
 define=rm_define
-delay1,delay2=.1,1
 l1,l2=0,255
+delay=.1
 
 RGB=[
     [],         # Empty list box
@@ -33,7 +33,7 @@ def start():
 
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
-                time.sleep(delay1)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break 
 
@@ -47,7 +47,7 @@ def start():
 
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
-                time.sleep(delay1)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
@@ -61,7 +61,7 @@ def start():
 
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
-                time.sleep(delay1)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break 
 
@@ -75,7 +75,7 @@ def start():
 
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
-                time.sleep(delay1)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
@@ -89,7 +89,7 @@ def start():
 
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
-                time.sleep(delay1)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
@@ -103,7 +103,7 @@ def start():
 
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
-                time.sleep(delay1)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
