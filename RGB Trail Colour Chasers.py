@@ -68,7 +68,7 @@ delay1,delay2=.1,1
 l1,l2=0,255
 
 RGB=[
-    [],
+    [],         # Empty list box
     [l2,l1,l1], # RGB Red
     [l2,l2,l1], # RGB Yellow
     [l1,l1,l2], # RGB Blue
