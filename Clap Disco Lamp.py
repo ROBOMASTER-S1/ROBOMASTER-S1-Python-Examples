@@ -1,6 +1,5 @@
-# Make the Robomaster S1 become a cool Clap Disco Lamp. Simply clap your hands twice every time to
-# change his leds into your favorite Disco leds setting. Clap your hands three times to turn his leds
-# off and on.
+# Make the Robomaster S1 become a cool Clap Disco Lamp. Simply clap your hands twice every time to change his
+# leds into your favorite Disco leds setting. Clap your hands three times to turn his leds off and on.
 
 led=led_ctrl
 media=media_ctrl
