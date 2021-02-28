@@ -8,7 +8,7 @@ led=led_ctrl
 media=media_ctrl
 define=rm_define
 l1,l2=0,255
-delay=.1
+second,delay=1,.1
 
 RGB=[
     [],         # empty list box
@@ -22,9 +22,13 @@ RGB=[
     [l1,l2,l1], # RGB Green
     ]
 
+led.turn_off(define.armor_all)
+time.sleep(second)
+
 def start():
     def rgb_single_colour_chasers_forward():
         while True:
+            led_ctrl.gun_led_on()
             for i in range(1,9):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -34,11 +38,13 @@ def start():
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay)
+                led_ctrl.gun_led_off()
             if media.check_condition(define.cond_sound_recognized_applause_twice):
-                break 
+                break
 
     def rgb_single_colour_chasers_reverse():
-        while True:            
+        while True:
+            led_ctrl.gun_led_on()
             for i in range(8,0,-1):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -48,11 +54,13 @@ def start():
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay)
+                led_ctrl.gun_led_off()
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
-    def rgb_double_colour_chasers_forward():   
+    def rgb_double_colour_chasers_forward():
         while True:
+            led_ctrl.gun_led_on()
             for i in range(1,5):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -62,11 +70,13 @@ def start():
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay)
+                led_ctrl.gun_led_off()
             if media.check_condition(define.cond_sound_recognized_applause_twice):
-                break 
+                break
 
-    def rgb_double_colour_chasers_reverse():   
+    def rgb_double_colour_chasers_reverse():
         while True:
+            led_ctrl.gun_led_on()
             for i in range(4,0,-1):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -76,11 +86,13 @@ def start():
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay)
+                led_ctrl.gun_led_off()
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
     def rgb_quad_colour_chasers_forward():
         while True:
+            led_ctrl.gun_led_on()
             for i in range(1,3):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -90,11 +102,13 @@ def start():
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay)
+                led_ctrl.gun_led_off()
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
     def rgb_quad_colour_chasers_reverse():
         while True:
+            led_ctrl.gun_led_on()
             for i in range(2,0,-1):
                 led.set_top_led(define.armor_top_all,
                 RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_off)
@@ -104,19 +118,46 @@ def start():
                 led.set_bottom_led(define.armor_bottom_all,
                 RGB[-i][0],RGB[-i][1],RGB[-i][2],define.effect_always_on)
                 time.sleep(delay)
+                led_ctrl.gun_led_off()
+            if media.check_condition(define.cond_sound_recognized_applause_twice):
+                break
+
+    def rgb_flash_colour_changers():
+        while True:
+            led_ctrl.gun_led_on()
+            for i in range(1,5):
+                led.set_top_led(define.armor_top_all,
+                RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_on)
+
+                led.set_bottom_led(define.armor_bottom_all,
+                RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_on)
+                time.sleep(delay)
+            if media.check_condition(define.cond_sound_recognized_applause_twice):
+                break
+
+            led_ctrl.gun_led_off()
+            for i in range(3,1,-1):
+                led.set_top_led(define.armor_top_all,
+                RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_on)
+
+                led.set_bottom_led(define.armor_bottom_all,
+                RGB[i][0],RGB[i][1],RGB[i][2],define.effect_always_on)
+                time.sleep(delay)
             if media.check_condition(define.cond_sound_recognized_applause_twice):
                 break
 
     media.enable_sound_recognition(rm_define.sound_detection_applause)
-                
+
     while True:
         rgb_single_colour_chasers_forward()
         rgb_double_colour_chasers_forward()
         rgb_quad_colour_chasers_forward()
+        rgb_flash_colour_changers()
         rgb_quad_colour_chasers_reverse()
         rgb_double_colour_chasers_reverse()
         rgb_single_colour_chasers_reverse()
-        
+
 def sound_recognized_applause_thrice(msg):
     led.turn_off(define.armor_all)
+    led_ctrl.gun_led_off()
     media.cond_wait(define.cond_sound_recognized_applause_thrice)
