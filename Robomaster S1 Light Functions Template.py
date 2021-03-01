@@ -38,12 +38,12 @@ RGB2=[
     [l1,l1,l2], # RGB Blue
     [l1,l2,l1], # RGB Green
     ]
-    
-led.set_flash(define.armor_all,blink_rate)
-led.turn_off(define.armor_all)
-time.sleep(second)
 
 def start():
+    led.set_flash(define.armor_all,blink_rate)
+    led.turn_off(define.armor_all)
+    
+    time.sleep(second)
     def rgb_colour_trail_forward():
         for i in range(1,7):
             led.set_top_led(define.armor_top_all,
