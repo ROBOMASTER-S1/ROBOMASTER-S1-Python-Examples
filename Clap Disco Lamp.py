@@ -34,10 +34,10 @@ RGB=[
     [l1,l2,l1], # RGB Green
     ]
 
-led.turn_off(define.armor_all)
-time.sleep(second)
-
 def start():
+    led.turn_off(define.armor_all)
+    time.sleep(second)
+    
     def rgb_single_colour_chasers_forward():
         while True:
             led_ctrl.gun_led_on()
