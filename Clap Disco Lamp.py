@@ -7,7 +7,7 @@
 led=led_ctrl
 media=media_ctrl
 define=rm_define
-l1,l2=0,55
+l1,l2=0,255
 second,delay=1,.1
 
 RGB_RY=[
