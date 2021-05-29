@@ -119,6 +119,6 @@ def start():
         media.play_sound(define.media_sound_shoot,wait_for_complete_flag=True)
         media.play_sound(define.media_sound_shoot,wait_for_complete_flag=True)
         led.gun_led_off()
-        gimbal_ctrl.recenter()
+        gimbal.recenter()
     
         x=x+1 # or instead use 'x+=1'
