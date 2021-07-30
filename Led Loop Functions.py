@@ -1,12 +1,12 @@
 # Robomaster S1 Led Loop Functions Python Program Example:
-# How to visually understand functions in Python, with the
-# Robomaster S1
+# How to visually understand functions in Python, with the Robomaster S1.
 
 led=led_ctrl
 media=media_ctrl
 define=rm_define
 l1,l2=0,255
 delay=.1
+x=-1
 
 def start():
 
@@ -22,7 +22,7 @@ def start():
 
     def single_reverse_leds():
         for j in range(2):
-            for i in range(8,0,-1):
+            for i in range(8,0,x):
                 led.set_top_led(define.armor_top_all,l1,l2,l2,define.effect_always_off)
                 led.set_single_led(define.armor_top_all,[i],define.effect_always_on)
                 time.sleep(delay)
@@ -36,7 +36,7 @@ def start():
 
     def double_reverse_leds():
         for j in range(2):
-            for i in range(4,0,-1):
+            for i in range(4,0,x):
                 led.set_top_led(define.armor_top_all,l1,l2,l2,define.effect_always_off)
                 led.set_single_led(define.armor_top_all,[i,i+4],define.effect_always_on)      
                 time.sleep(delay)
@@ -48,14 +48,14 @@ def start():
                 led.set_single_led(define.armor_top_all,[i,i+4],define.effect_always_on)
                 time.sleep(delay)
 
-            for i in range(3,1,-1):
+            for i in range(3,1,x):
                 led.set_top_led(define.armor_top_all,l1,l2,l2,define.effect_always_off)
                 led.set_single_led(define.armor_top_all,[i,i+4],define.effect_always_on)
                 time.sleep(delay)
 
     def double_reverse_forward_leds():
         for j in range(2):
-            for i in range(4,0,-1):
+            for i in range(4,0,x):
                 led.set_top_led(define.armor_top_all,l1,l2,l2,define.effect_always_off)
                 led.set_single_led(define.armor_top_all,[i,i+4],define.effect_always_on)
                 time.sleep(delay)
@@ -74,7 +74,7 @@ def start():
 
     def quad_chasers_reverse():
         for j in range(3):
-            for i in range(2,0,-1):
+            for i in range(2,0,x):
                 led.set_top_led(define.armor_top_all,l1,l2,l2,define.effect_always_off)
                 led.set_single_led(define.armor_top_all,[i,i+2,i+4,i+6],define.effect_always_on)
                 time.sleep(delay)
@@ -93,11 +93,11 @@ def start():
     def trail_chasers_reverse():
         for j in range(2):
             led.set_top_led(define.armor_top_all,l1,l2,l2,define.effect_always_off)
-            for i in range(8,0,-1):
+            for i in range(8,0,x):
                 led.set_single_led(define.armor_top_all,[i],define.effect_always_on)
                 time.sleep(delay)
             
-            for i in range(8,0,-1):
+            for i in range(8,0,x):
                 led.set_single_led(define.armor_top_all,[i],define.effect_always_off)
                 time.sleep(delay)
 
