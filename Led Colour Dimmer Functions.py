@@ -1,5 +1,5 @@
 # Robomaster S1 Led Colour Dimmer Functions Python Program Example:
-# How to visually understand functions in Python, with the Robomaster S1
+# How to visually understand functions in Python, with the Robomaster S1.
 
 led=led_ctrl
 define=rm_define
