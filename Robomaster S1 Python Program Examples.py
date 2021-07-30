@@ -1,4 +1,4 @@
-# ROBOMASTER-S1-Python-Examples
+# Robomaster-S1-Python Program Examples
 
 # Learning how to program the Robomaster S1 in Python
 
