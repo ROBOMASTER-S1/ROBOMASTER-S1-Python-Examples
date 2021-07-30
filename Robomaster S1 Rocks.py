@@ -26,11 +26,11 @@ def start():
 
     for i in range(2):
         gimbal.rotate(define.gimbal_right)
-        chassis.rotate_with_time(define.anticlockwise, 0.3)
+        chassis.rotate_with_time(define.anticlockwise,0.3)
         gimbal.rotate(define.gimbal_left)
-        chassis.rotate_with_time(define.clockwise, 0.6)
+        chassis.rotate_with_time(define.clockwise,0.6)
         gimbal.rotate(define.gimbal_right)
-        chassis.rotate_with_time(define.anticlockwise, 0.3)
+        chassis.rotate_with_time(define.anticlockwise,0.3)
 
     led.turn_off(define.armor_all)
     led.gun_led_off();gimbal.stop()
