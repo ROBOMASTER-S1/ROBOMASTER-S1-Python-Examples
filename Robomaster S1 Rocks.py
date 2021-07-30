@@ -24,7 +24,6 @@ def start():
     led.set_bottom_led(define.armor_bottom_all,l1,l2,l1,define.effect_flash)
     led.gun_led_on()
 
-
     for i in range(2):
         gimbal.rotate(define.gimbal_right)
         chassis.rotate_with_time(define.anticlockwise, 0.3)
