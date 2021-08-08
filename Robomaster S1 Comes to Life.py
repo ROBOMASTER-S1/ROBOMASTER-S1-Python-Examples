@@ -135,7 +135,7 @@ def start():
                 elif randspeed==40:led.set_flash(define.armor_all,blink_rate[2])
                 elif randspeed==50:led.set_flash(define.armor_all,blink_rate[3])
                 elif randspeed==60:led.set_flash(define.armor_all,blink_rate[4])
-                elif randspeed==60:led.set_flash(define.armor_all,blink_rate[5])
+                elif randspeed==80:led.set_flash(define.armor_all,blink_rate[5])
 
                 if randrotate<=180:
                     led.set_top_led(define.armor_top_left,l2,l1,l1,define.effect_always_on)
