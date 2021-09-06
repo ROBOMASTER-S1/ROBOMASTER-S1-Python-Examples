@@ -6,9 +6,10 @@
 # simply click the blue play button, then clap your hands three times to wake him
 # up. To make him sleep, simply tap any one of his bottom hit detectors.
 
-# This Robomaster program example uses two powerful random generator options,
-# the random.randint() and the random.choice() functions. These two, random
-# generator functions are what make the Robomaster S1 come to life.
+# This Robomaster S1 program example uses three powerful random generator
+# functions. The random.randint(), the random.choice() and the random.choices()
+# functions. These three random generator functions are what make the Robomaster
+# S1 come to life and appear to have a mind of its own.
 
 # To avoid damaging your Robomaster S1, never set any speeds higher than they
 # are shown here, especially in smaller play areas. Note: be cautious when setting
@@ -34,12 +35,16 @@
 # RGB Colour Trail Chasers Forward Reverse Function
 # RGB Colour Changers Forward Reverse Function
 # RGB Flash Colour Changers Function
+# RGB Colour Flasher Functions
 # RGB Colour Dimmer Functions
 
 # User Interaction Features:
 
 # Detection Applause
 # Hit Detection
+
+# Please note: new and improved features and updates will always
+# continue to grow as I learn more, each and every day.
 
 # I sure hope other Robomaster S1 people find this program very
 # enjoyable and useful. I sure put a lot of time into creating it.
