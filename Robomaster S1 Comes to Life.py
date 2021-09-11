@@ -160,15 +160,14 @@ def start():
     media_enable_disable[1](define_detection_applause)
     armor_set_sensitivity(10)
 
-# Robomster S1 Start Function:
+# Robomster S1 comes to life Function:
 
-    def robomaster_s1_start():
+    def robomaster_s1_comes_to_life():
         for i in range(2):
             led_set_top_bottom[i](
                 define_armor_top_bottom_all[i],
                 RGB2[2][0],RGB2[2][1],RGB2[2][2],
                 define_effect[3])
-        gimbal.recenter()
 
         media_wait(define_sound_recognized_twice_thrice[1])
 
@@ -209,13 +208,13 @@ def start():
                             define_armor_top_right_left[i],
                             RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],
                             define_effect[get_value.get(i+1)])
-                        
+
                     for i in range(2):
                         led_set_top_bottom[1](
                             define_armor_bottom_right_left[i],
                             RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],
                             define_effect[get_value.get(i+1)])
-                        
+
                     get_value={1:1,2:2}
                     for i in range(2):
                         led_set_top_bottom[1](
@@ -228,6 +227,7 @@ def start():
 
                     led_set_top_bottom[0](define_armor_top_bottom_all[0],
                     RGB2[3][0],RGB2[3][1],RGB2[3][2],define_effect[1])
+
                     for i in range(2):
                         led_set_top_bottom[1](define_armor_bottom_right_left[i],
                         RGB2[3][0],RGB2[3][1],RGB2[3][2],define_effect[1])
@@ -339,13 +339,13 @@ def start():
                             define_armor_top_right_left[i],
                             RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],
                             define_effect[get_value.get(i+1)])
-                        
+
                     for i in range(2):
                         led_set_top_bottom[1](
                             define_armor_bottom_right_left[i],
                             RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],
                             define_effect[get_value.get(i+1)])
-                        
+
                     get_value={1:1,2:2}
                     for i in range(2):
                         led_set_top_bottom[1](
@@ -428,13 +428,13 @@ def start():
                             define_armor_top_right_left[i],
                             RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],
                             define_effect[get_value.get(i+1)])
-                        
+
                     for i in range(2):
                         led_set_top_bottom[1](
                             define_armor_bottom_right_left[i],
                             RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],
                             define_effect[get_value.get(i+1)])
-                        
+
                     get_value={1:1,2:2}
                     for i in range(2):
                         led_set_top_bottom[1](
@@ -590,7 +590,7 @@ def start():
                 media.play_sound(define.media_sound_scanning,
                     wait_for_complete_flag=False)
                 gimbal.set_rotate_speed(randgimbal_speed)
-                gimbal.set_rotate_speed(scan_speed)                
+                gimbal.set_rotate_speed(scan_speed)
                 gimbal.angle_ctrl(randrotate,randangle)
 
                 if commands_exit==a:continue
@@ -640,7 +640,7 @@ def start():
                 RGB2[3][0],RGB2[3][1],RGB2[3][2],define_effect[3])
                 led_set_top_bottom[1](define_armor_bottom_front_back[i],
                 RGB2[i+1][0],RGB2[i+1][1],RGB2[i+1][2],define_effect[3])
-            gimbal.recenter()  
+            gimbal.recenter()
             time.sleep(randdelay)
 
             if commands_exit==a:continue
@@ -932,14 +932,14 @@ def start():
                 led_set_top_bottom[1](define_armor_bottom_front_back[i],
                 RGB2[i+1][0],RGB2[i+3][1],RGB2[i+2][2],define_effect[1])
                 time.sleep(delay3)
-                
+
             for i in range(2):
                 led_set_top_bottom[0](define_armor_top_right_left[i],
                 RGB2[i+1][0],RGB2[i+1][1],RGB2[i+2][2],define_effect[1])
                 led_set_top_bottom[1](define_armor_bottom_right_left[i],
                 RGB2[i+1][0],RGB2[i+2][1],RGB2[i+2][2],define_effect[1])
                 led_set_top_bottom[1](define_armor_bottom_front_back[i],
-                RGB2[i+3][0],RGB2[i+2][1],RGB2[i+2][2],define_effect[1]) 
+                RGB2[i+3][0],RGB2[i+2][1],RGB2[i+2][2],define_effect[1])
                 time.sleep(delay3)
         gun_led_on_off[0]()
 
@@ -958,7 +958,7 @@ def start():
 
             for i in range(2):
                 led_set_top_bottom[0](define_armor_top_right_left[i],
-                RGB2[i+4][0],RGB2[i+5][1],RGB2[i+5][2],define_effect[1])        
+                RGB2[i+4][0],RGB2[i+5][1],RGB2[i+5][2],define_effect[1])
                 led_set_top_bottom[1](define_armor_bottom_right_left[i],
                 RGB2[i+4][0],RGB2[i+4][1],RGB2[i+1][2],define_effect[1])
                 led_set_top_bottom[1](define_armor_bottom_front_back[i],
@@ -995,13 +995,13 @@ def start():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
         gun_led_on_off[1]()
-        for i in range(0,randdimmer):
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     i,i,i,define_effect[1]) # White
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
@@ -1012,14 +1012,14 @@ def start():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
         gun_led_on_off[1]()
-        for i in range(randdimmer,0,-1):
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     i,RGB2[2][1],RGB2[2][1],
                     define_effect[1]) # Red
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
@@ -1031,13 +1031,13 @@ def start():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
         gun_led_on_off[1]()
-        for i in range(randdimmer,0,-1):
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     i,i,RGB2[3][2],define_effect[1]) # Yellow
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
@@ -1048,15 +1048,15 @@ def start():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
         gun_led_on_off[1]()
-        
-        for i in range(0,randdimmer):
+
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     RGB2[4][0],RGB2[4][0],i,
                     define_effect[1]) # Blue
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
@@ -1067,15 +1067,15 @@ def start():
     def rgb_green_dimmer():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
-        gun_led_on_off[1]()        
-        for i in range(0,randdimmer):
+        gun_led_on_off[1]()
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     RGB2[5][0],i,RGB2[5][0],
                     define_effect[1]) # Green
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
@@ -1087,13 +1087,13 @@ def start():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
         gun_led_on_off[1]()
-        for i in range(0,randdimmer):
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     i,RGB2[6][1],i,define_effect[1]) # Pink
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
@@ -1103,21 +1103,21 @@ def start():
     def rgb_cyan_dimmer():
         gimbal.stop()
         randdimmer=random.randint(0,l2)
-        gun_led_on_off[1]()        
-        for i in range(0,randdimmer):
+        gun_led_on_off[1]()
+        for i in range(randdimmer):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     RGB2[7][0],i,i,define_effect[1]) # Cyan
         gun_led_on_off[0]()
-        
+
         for i in range(randdimmer,0,-1):
             for j in range(2):
                 led_set_top_bottom[j](
                     define_armor_top_bottom_all[j],
                     RGB2[7][0],i,i,define_effect[1]) # Cyan
 
-    robomaster_s1_start()
+    robomaster_s1_comes_to_life()
 
     functions_list=[
         robot_all_wheel_omni_directional_drive,
