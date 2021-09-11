@@ -850,11 +850,13 @@ def start():
                 RGB2[j][0],RGB2[j][1],RGB2[j][2],define_effect[2])
 
                 for i in range(8,0,-1):
-                    led.set_single_led(define_armor_top_bottom_all[0],[i],define_effect[1])
+                    led.set_single_led(
+                        define_armor_top_bottom_all[0],[i],define_effect[1])
                     time.sleep(delay2);gun_led_on_off[0]()
 
                 for i in range(8,0,-1):
-                    led.set_single_led(define_armor_top_bottom_all[0],[i],define_effect[0])
+                    led.set_single_led(
+                        define_armor_top_bottom_all[0],[i],define_effect[0])
                     time.sleep(delay2)
 
                 if commands_exit==a:continue
