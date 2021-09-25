@@ -7,7 +7,7 @@ robot_ctrl.set_mode(rm_define.robot_mode_gimbal_follow)
 robot_ctrl.set_mode(rm_define.robot_mode_chassis_follow)
 
 robot_ctrl.set_mode(rm_define.robot_mode_free)
-'''------------------------------------------------------------------------------------------------------------------'''
+'''----------------------------------------------------------------------------------------------------------------------'''
 tools.timer_ctrl(rm_define.timer_start)
 
 tools.timer_ctrl(rm_define.timer_stop)
