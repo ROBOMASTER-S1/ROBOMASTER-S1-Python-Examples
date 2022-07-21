@@ -1,5 +1,7 @@
 '''Robomaster S1 Comes to Life 4.0'''
 
+# Created by Joseph C. Richardson
+
 # Make Robomaster S1 come to life. Simply copy or download this program example.
 
 # You must copy and paste the program code into your Robomaster app. After that,
