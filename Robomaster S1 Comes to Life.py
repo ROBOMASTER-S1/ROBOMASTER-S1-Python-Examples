@@ -1,6 +1,6 @@
 '''Robomaster S1 Comes to Life 4.0'''
 
-# Created by Joseph C. Richardson
+# Created by Joseph C. Richardson, GitHub.com
 
 # Make Robomaster S1 come to life. Simply copy or download this program example.
 
