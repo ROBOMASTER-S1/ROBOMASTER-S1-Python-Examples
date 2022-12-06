@@ -178,7 +178,7 @@ def start():
                 RGB_PC[i+1][0],RGB_PC[i+1][1],RGB_PC[i+1][2],define_effect[1])
                 time.sleep(delay1);gun_led_on_off[l1]()
 
-# # Function 4:
+# Function 4:
     def rgb_single_red_yellow_reverse():
         while True:
             gun_led_on_off[x]()
@@ -202,7 +202,7 @@ def start():
                 RGB_BG[i][0],RGB_BG[i][1],RGB_BG[i][2],define_effect[1])
                 time.sleep(delay1);gun_led_on_off[l1]()
 
-# # Function 6:
+# Function 6:
     def rgb_single_pink_cyan_reverse():
         while True:
             gun_led_on_off[x]()
