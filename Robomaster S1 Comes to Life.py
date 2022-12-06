@@ -1237,5 +1237,6 @@ def armor_hit_detection_all(msg):
         led_set_top_bottom[i](define_armor_top_bottom_all[i],
         RGB_COLOURS[2][0],RGB_COLOURS[2][1],
         RGB_COLOURS[2][2],define_effect[get_value.get(i+1)])
+        
     media.play_sound(define.media_sound_count_down,
     wait_for_complete_flag=True);gimbal.recenter()
