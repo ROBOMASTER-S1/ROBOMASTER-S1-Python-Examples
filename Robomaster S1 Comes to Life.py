@@ -24,7 +24,7 @@
 # Robomaster S1 feature functions illustrated here are as follows:
 
 # Robomster S1 Comes to Life Function with sound effect
-# Robot All Wheel Omn directional Drive Function
+# Robot All Wheel Omni directional Drive Function
 # Gimbal Free Mode Right Left Function
 # Chassis Follow Gimbal Right Left Function
 # Dance Rock Function
