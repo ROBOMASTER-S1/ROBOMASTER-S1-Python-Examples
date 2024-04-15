@@ -10,3 +10,5 @@ Next you must calibrate the Robomaster S1 so it can work properly.
 
 Note: to be able to program the Robomaster S1 in Scratch or Python, you must run the Robomaster S1 app, then connect
 the Robomaster S1 to it, via wireless mobile device or on your computer, via Wi-Fi.
+
+I am almost a complete Walking Human Computer Science Research Laboratory Machine on Two Legs. 😁
