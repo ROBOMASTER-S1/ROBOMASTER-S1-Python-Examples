@@ -2,6 +2,8 @@
 # fun Robomaster S1 Python program example. Simply type and execute/run this
 # program example below and see what happens.
 
+# Created by Joseph C. Richardson, GitHub.com
+
 # Create some strings to shorten some of the long Robomaster S1 Python commands,
 # such as those long led commands. Note: only these strings below can be used to
 # shorten most Robomaster S1 Python commands. Also give these strings similar names
