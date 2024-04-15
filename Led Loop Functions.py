@@ -1,6 +1,8 @@
 # Robomaster S1 Led Loop Functions Python Program Example:
 # How to visually understand functions in Python, with the Robomaster S1.
 
+# Created by Joseph C. Richardson, GitHub.com
+
 led=led_ctrl
 media=media_ctrl
 define=rm_define
